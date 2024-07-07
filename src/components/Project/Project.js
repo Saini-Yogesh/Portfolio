@@ -5,6 +5,14 @@ import Projectitem from "./Projectitem";
 const Project = () => {
   const projectData = [
     {
+      sourceCodeLink: "https://github.com/Saini-Yogesh/Portfolio",
+      deployedLink: "https://saini-yogesh.github.io/Portfolio/",
+      name: "Personal-Portfolio",
+      description:
+        "This is my personal portfolio website, built with React. It showcases my skills, projects, education, and achievements. The website features a responsive design with a sticky navbar for easy navigation. Each section—About Me, Education, Skills, Projects, and Achievements—provides detailed information about my background and work. The projects section includes links to both the source code and deployed versions of my projects. Additionally, the contact section contains links to my social media profiles and email. This portfolio serves as a comprehensive introduction to my professional and academic journey.",
+      languages: "HTML | CSS | JavaScript | React JS",
+    },
+    {
       sourceCodeLink: "https://github.com/Saini-Yogesh/Trip-connect",
       deployedLink: "https://saini-yogesh.github.io/Trip-connect/",
       name: "Trip-connect",
