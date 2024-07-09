@@ -7,11 +7,11 @@ const Projectitem = (props) => {
     <>
       <div className="project-item">
         <div className="project-links">
-          <a href={deployedLink} target="_blank" rel="noopener noreferrer">
-            <i className="fa-solid fa-globe project-icon"></i>
-          </a>
           <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
             <i className="fa-solid fa-code-branch project-icon"></i>
+          </a>
+          <a href={deployedLink} target="_blank" rel="noopener noreferrer">
+            <i className="fa-solid fa-globe project-icon"></i>
           </a>
         </div>
         <h3 className="project-name">{name}</h3>
