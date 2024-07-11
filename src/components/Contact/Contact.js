@@ -8,7 +8,7 @@ const Contact = () => {
       <div id="Contact" className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <a href="/">
+            <a href="/Portfolio">
               <img src={footeLogo} alt="Logo" className="logo" />
             </a>
           </div>

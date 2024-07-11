@@ -16,7 +16,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="join-button"
           >
-            Mr Resume
+            My Resume
           </a>
           <a href="mailto:yogesh.saini4002@gmail.com" className="contact-link">
             Mail Me
