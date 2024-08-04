@@ -30,7 +30,7 @@ const Skills = () => {
             <i className="fa-brands fa-phoenix-framework skill-icon"></i>
             <div className="skill-content">
               <h3>Frameworks & Developer Tools</h3>
-              <p>React, Node.js, VS Code, Git, GitHub, Bootstrap, MongoDb</p>
+              <p>React, VS Code, Git, GitHub, Bootstrap</p>
             </div>
           </div>
         </div>

@@ -8,11 +8,15 @@ const Achievement = () => {
       link: "https://drive.google.com/file/d/1Sh4zaZrIoVNTQWBh-VdDWCR-Tf4u_UDh/view?usp=sharing",
     },
     {
-      text: "Global Rank: 786 in March 2024, Div 3, organised by CodeChef.",
-      link: "https://drive.google.com/file/d/1X81t_d-zGJZBzDO2p2UHqqxiJWlhFfmL/view?usp=sharing",
+      text: "Achieved a global rank of 982 out of 34,698 participants in LeetCode Biweekly Contest 135.",
+      link: "https://leetcode.com/contest/biweekly-contest-135/ranking",
     },
     {
-      text: "LeetCode 1610+ maximum contest rating, top 20% globally.",
+      text: "Solved 1,000+ DSA problems on LeetCode, GFG, Codeforces, and CodeChef.",
+      link: "/",
+    },
+    {
+      text: "LeetCode 1750+ maximum contest rating, top 10% globally.",
       link: "https://leetcode.com/u/yogesh_1___/",
     },
     {
@@ -20,7 +24,7 @@ const Achievement = () => {
       link: "https://www.codechef.com/users/yogesh_1_saini",
     },
     {
-      text: "Codeforces 1160+ maximum contest rating.",
+      text: "Codeforces 1200+ maximum contest rating.",
       link: "https://codeforces.com/profile/yogesh_1___",
     },
   ];

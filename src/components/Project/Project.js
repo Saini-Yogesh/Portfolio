@@ -61,6 +61,14 @@ const Project = () => {
       languages: "HTML | CSS | JavaScript | APIs",
     },
     {
+      sourceCodeLink: "https://github.com/Saini-Yogesh/Currency-Converter",
+      deployedLink: "https://saini-yogesh.github.io/Currency-Converter/",
+      name: "Currency-Converter",
+      description:
+        "A web application built with HTML, CSS, and JavaScript that uses APIs to provide real-time currency exchange rates. Users can easily convert amounts between different currencies with a responsive and user-friendly interface.",
+      languages: "HTML | CSS | JavaScript | APIs",
+    },
+    {
       sourceCodeLink: "https://github.com/Saini-Yogesh/Mini-ATM",
       deployedLink: "https://github.com/Saini-Yogesh/Mini-ATM",
       name: "Mini-ATM",
