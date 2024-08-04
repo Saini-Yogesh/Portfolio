@@ -47,7 +47,9 @@ const Form = () => {
     <>
       <div className="contact-form">
         <div className="contact-form-container">
-          <h2>Contact Me</h2>
+          <h1>
+            <i className="fa-solid fa-user"></i> Contact Me
+          </h1>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="user_email">Email:</label>
