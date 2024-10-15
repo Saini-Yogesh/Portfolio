@@ -45,3 +45,42 @@
 .see-more-link:hover {
   color: #0056b3;
 }
+
+.icon-container {
+  position: relative;
+}
+
+.project-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.icon-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap; /* Prevent tooltip text from wrapping */
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.icon-container:hover .icon-tooltip {
+  display: block;
+}
+
+.icon-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Bottom of the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
