@@ -8,6 +8,7 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import Navbar from "./components/Navbar/Navbar";
 import Project from "./components/Project/Project";
 import Skills from "./components/Skills/Skills";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Achievement />
       <Form />
       <Contact />
+      <ScrollToTopButton />
     </>
   );
 }

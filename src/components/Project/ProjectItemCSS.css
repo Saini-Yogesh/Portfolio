@@ -35,3 +35,13 @@
   color: #333;
   margin-bottom: 0.5rem;
 }
+
+.see-more-link {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.see-more-link:hover {
+  color: #0056b3;
+}

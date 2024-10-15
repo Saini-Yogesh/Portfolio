@@ -16,15 +16,15 @@ const Achievement = () => {
       link: "/",
     },
     {
-      text: "LeetCode 1750+ maximum contest rating, top 10% globally.",
+      text: "LeetCode 1780+ maximum contest rating, top 8% globally.",
       link: "https://leetcode.com/u/yogesh_1___/",
     },
     {
-      text: "CodeChef 1540+ maximum contest rating.",
+      text: "CodeChef 1560+ maximum contest rating.",
       link: "https://www.codechef.com/users/yogesh_1_saini",
     },
     {
-      text: "Codeforces 1200+ maximum contest rating.",
+      text: "Codeforces 1220+ maximum contest rating.",
       link: "https://codeforces.com/profile/yogesh_1___",
     },
   ];

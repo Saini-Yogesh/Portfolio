@@ -13,7 +13,7 @@ const Skills = () => {
             <i className="fa-regular fa-file-code skill-icon"></i>
             <div className="skill-content">
               <h3>Programming Languages</h3>
-              <p> C++,HTML, CSS, JavaScript,</p>
+              <p> C++, HTML, CSS, JavaScript</p>
             </div>
           </div>
           <div className="skill-item">
@@ -21,16 +21,36 @@ const Skills = () => {
             <div className="skill-content">
               <h3>Relevant Courses</h3>
               <p>
-                Data Structures And Algorithm(DSA), Object-oriented
-                programming(OOPS), Database Management System(DBMS)
+                Data Structures And Algorithms (DSA), Object-Oriented
+                Programming (OOPS), Database Management System (DBMS)
               </p>
             </div>
           </div>
           <div className="skill-item">
             <i className="fa-brands fa-phoenix-framework skill-icon"></i>
             <div className="skill-content">
-              <h3>Frameworks & Developer Tools</h3>
-              <p>React, VS Code, Git, GitHub, Bootstrap</p>
+              <h3>Frameworks</h3>
+              <p>
+                Node.js, React.js, Next.js, Mongoose, Express, Bootstrap, REST
+                APIs
+              </p>
+            </div>
+          </div>
+          <div className="skill-item">
+            <i className="fa-solid fa-wrench skill-icon"></i>
+            <div className="skill-content">
+              <h3>Developer Tools</h3>
+              <p>MongoDB, Postman, Thunder Client, VS Code, Git, GitHub</p>
+            </div>
+          </div>
+          <div className="skill-item">
+            <i className="fa-solid fa-users skill-icon"></i>
+            <div className="skill-content">
+              <h3>Soft Skills</h3>
+              <p>
+                Adaptability, Problem-solving, Teamwork, Communication,
+                Leadership, Time Management, Enthusiasm, Critical Thinking
+              </p>
             </div>
           </div>
         </div>
