@@ -12,7 +12,7 @@ const Achievement = () => {
       link: "https://leetcode.com/contest/biweekly-contest-135/ranking",
     },
     {
-      text: "Solved 1,000+ DSA problems on LeetCode, GFG, Codeforces, and CodeChef.",
+      text: "Solved 1,100+ DSA problems on LeetCode, GFG, Codeforces, and CodeChef.",
       link: "/",
     },
     {
@@ -20,7 +20,7 @@ const Achievement = () => {
       link: "https://leetcode.com/u/yogesh_1___/",
     },
     {
-      text: "CodeChef 1560+ maximum contest rating.",
+      text: "CodeChef 1570+ maximum contest rating.",
       link: "https://www.codechef.com/users/yogesh_1_saini",
     },
     {

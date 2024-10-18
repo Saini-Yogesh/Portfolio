@@ -19,8 +19,6 @@
 
 .scroll-to-top-btn:hover {
   background-color: white;
-}
-
-.scroll-to-top-btn i {
-  margin: 0;
+  border-radius: 50px;
+  width: auto;
 }

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./ScrollToTopButtonCSS.css"; // Import the CSS for styling
+import "./ScrollToTopButtonCSS.css";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [topText, setTopText] = useState("");
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -24,11 +25,25 @@ const ScrollToTopButton = () => {
     });
   };
 
+  const handleMouseEnter = () => {
+    setTopText(" Top");
+  };
+
+  const handleMouseLeave = () => {
+    setTopText("");
+  };
+
   return (
     <>
       {isVisible && (
-        <button onClick={scrollToTop} className="scroll-to-top-btn">
+        <button
+          onClick={scrollToTop}
+          className="scroll-to-top-btn"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <i className="fa fa-arrow-up" aria-hidden="true"></i>
+          <p className="scroppTop-text">{topText}</p>
         </button>
       )}
     </>

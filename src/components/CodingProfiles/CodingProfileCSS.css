@@ -1,0 +1,35 @@
+.coding-profiles-section {
+  padding: 60px 10% 3rem 10%;
+  background-color: #151515;
+  text-align: center;
+}
+
+.coding-profiles-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: white;
+}
+
+.coding-profiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5vmin;
+  margin-top: 5rem;
+}
+
+.coding-profile-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.coding-profile-icon {
+  border-radius: 50%;
+  width: 20vmin;
+  height: 20vmin;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
