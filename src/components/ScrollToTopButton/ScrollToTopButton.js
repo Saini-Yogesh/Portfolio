@@ -3,7 +3,6 @@ import "./ScrollToTopButtonCSS.css";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [topText, setTopText] = useState("");
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -25,25 +24,11 @@ const ScrollToTopButton = () => {
     });
   };
 
-  const handleMouseEnter = () => {
-    setTopText(" Top");
-  };
-
-  const handleMouseLeave = () => {
-    setTopText("");
-  };
-
   return (
     <>
       {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="scroll-to-top-btn"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <button onClick={scrollToTop} className="scroll-to-top-btn">
           <i className="fa fa-arrow-up" aria-hidden="true"></i>
-          <p className="scroppTop-text">{topText}</p>
         </button>
       )}
     </>
