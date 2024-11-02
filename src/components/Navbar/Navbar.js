@@ -54,9 +54,10 @@ const Navbar = () => {
             Contact
           </a>
         </div>
-        <div className="navbar-menu-icon" onClick={handleMenuToggle}>
-          ☰
-        </div>
+        <i
+          className="fa-solid fa-bars navbar-menu-icon"
+          onClick={handleMenuToggle}
+        ></i>
       </nav>
     </>
   );

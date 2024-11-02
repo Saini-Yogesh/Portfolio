@@ -16,7 +16,7 @@ const Achievement = () => {
       link: "/",
     },
     {
-      text: "LeetCode 1780+ maximum contest rating, top 8% globally.",
+      text: "LeetCode 1790+ maximum contest rating, top 8% globally.",
       link: "https://leetcode.com/u/yogesh_1___/",
     },
     {
