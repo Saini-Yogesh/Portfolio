@@ -13,11 +13,11 @@ const AboutMe = () => {
           <p>
             Hi, I'm Yogesh Saini. I'm a web developer with a passion for
             creating dynamic and responsive web applications. With a strong
-            background in React and a keen eye for design, I enjoy bringing
-            ideas to life in the browser. My journey in web development started
-            with a curiosity for how websites are built, and it has evolved into
-            a fulfilling career where I get to solve interesting problems every
-            day.
+            background in the MERN stack and a keen eye for design, I enjoy
+            bringing ideas to life in the browser. My journey in web development
+            started with a curiosity for how websites are built, and it has
+            evolved into a fulfilling career where I get to solve interesting
+            problems every day.
           </p>
         </div>
         <div className="about-image">

@@ -1,29 +1,58 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./NavbarCSS.css";
-import { useState } from "react";
-import logo from "../logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    // Function to close the menu if clicking outside of it
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on cleanup
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-logo">
-          <a href="/Portfolio">
-            <img src={logo} alt="Logo" className="logo" />
+        <div
+          className={`navbar-links ${menuOpen ? "active" : ""}`}
+          ref={menuRef}
+        >
+          <a href="#AboutMe" onClick={handleLinkClick}>
+            About Me
           </a>
-        </div>
-        <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-          <a href="#AboutMe">About Me</a>
-          <a href="#Education">Education</a>
-          <a href="#Skills">Skills</a>
-          <a href="#Projects">Projects</a>
-          <a href="#Achievement">Achievement</a>
-          <a href="#Contact">Contact</a>
+          <a href="#Education" onClick={handleLinkClick}>
+            Education
+          </a>
+          <a href="#Skills" onClick={handleLinkClick}>
+            Skills
+          </a>
+          <a href="#Projects" onClick={handleLinkClick}>
+            Projects
+          </a>
+          <a href="#Achievement" onClick={handleLinkClick}>
+            Achievement
+          </a>
+          <a href="#Contact" onClick={handleLinkClick}>
+            Contact
+          </a>
         </div>
         <div className="navbar-menu-icon" onClick={handleMenuToggle}>
           ☰

@@ -23,7 +23,7 @@ const Education = () => {
         <div className="education-item">
           <div className="education-row">
             <span className="institute">Cleared JEE Main</span>
-            <span className="location">Siker,India</span>
+            <span className="location">Sikar,India</span>
           </div>
           <div className="education-row">
             <span className="degree">Admission at NIT Rourkela</span>

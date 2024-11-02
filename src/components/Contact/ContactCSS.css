@@ -2,23 +2,13 @@
   background-color: #151515;
   color: white;
   padding: 2rem 10% 1rem 10%;
+  text-align: center;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo,
-.logo {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  width: 15vmin;
-  height: 15vmin;
-  border-radius: 50%;
-  background-size: contain;
+  align-items: center;
 }
 
 .footer-icons {
@@ -38,31 +28,10 @@
 
 .footer-border {
   margin: 2rem auto;
-  width: 85%;
   border-top: 2px solid #888;
 }
 
 .footer-text {
-  text-align: left;
   font-size: 1rem;
   padding-top: 3vmin;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .footer-content {
-    justify-content: center;
-  }
-
-  .footer-logo {
-    display: none;
-  }
-
-  .footer-icons {
-    justify-content: center;
-  }
-
-  .footer-text {
-    text-align: center;
-  }
 }

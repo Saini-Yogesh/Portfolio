@@ -8,14 +8,6 @@
   top: 0;
 }
 
-.navbar-logo,
-.logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-size: contain;
-}
-
 .navbar-links {
   display: flex;
   gap: 1rem;
@@ -32,6 +24,7 @@
   background-color: #005e66;
   color: #ffffff;
   border-radius: 4px;
+  box-shadow: 0px 4px 8px rgb(251, 250, 250, 0.2);
 }
 
 .navbar-menu-icon {
@@ -46,7 +39,7 @@
   color: #005e66;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -61,6 +54,12 @@
   }
 
   .navbar-menu-icon {
-    display: block;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border-radius: 1vmin;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgb(251, 250, 250, 0.5);
   }
 }

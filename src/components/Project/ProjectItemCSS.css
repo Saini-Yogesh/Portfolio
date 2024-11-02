@@ -84,3 +84,10 @@
   border-style: solid;
   border-color: #333 transparent transparent transparent;
 }
+
+@media (max-width: 900px) {
+  .project-item {
+    margin: 1rem 0px;
+    width: 100%;
+  }
+}

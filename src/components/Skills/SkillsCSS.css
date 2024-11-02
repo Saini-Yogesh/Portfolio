@@ -47,14 +47,20 @@
 }
 
 /* Responsive Styling */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .skill-item {
+    width: 42%;
+  }
+}
+
+@media (max-width: 800px) {
   .skills-container {
     flex-direction: column;
     align-items: center;
   }
 
   .skill-item {
-    width: 80%;
+    width: 95%;
   }
 
   .skill-content h3 {

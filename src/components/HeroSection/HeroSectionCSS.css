@@ -54,7 +54,7 @@
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 930px) {
   .hero-section {
     flex-direction: column;
     text-align: center;

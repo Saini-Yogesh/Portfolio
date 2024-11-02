@@ -1,17 +1,11 @@
 import React from "react";
 import "./ContactCSS.css";
-import footeLogo from "../logo.png";
 
 const Contact = () => {
   return (
     <>
       <div id="Contact" className="footer">
         <div className="footer-content">
-          <div className="footer-logo">
-            <a href="/Portfolio">
-              <img src={footeLogo} alt="Logo" className="logo" />
-            </a>
-          </div>
           <div className="footer-icons">
             <a
               href="https://www.linkedin.com/in/yogesh-saini-203153265/"
