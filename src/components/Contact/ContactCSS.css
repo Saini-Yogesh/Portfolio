@@ -19,11 +19,11 @@
 .footer-icon {
   font-size: 7vmin;
   color: white;
-  transition: color 0.3s;
+  transition: transform 0.3s ease-in-out;
 }
 
 .footer-icon:hover {
-  color: #005e66;
+  transform: scale(1.15);
 }
 
 .footer-border {

@@ -12,7 +12,7 @@
 .navbar-links {
   display: flex;
   gap: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .navbar-links a {
@@ -49,13 +49,13 @@
 
   .navbar-menu-icon {
     display: flex;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     border-radius: 1vmin;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 8px rgb(251, 250, 250, 0.5);
-    font-size: 3rem;
+    font-size: 2.5rem;
     cursor: pointer;
     color: white;
     transition: color 0.3s;

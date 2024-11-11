@@ -32,4 +32,9 @@
   object-fit: cover;
   display: block;
   margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.coding-profile-link:hover .coding-profile-icon {
+  transform: scale(1.15);
 }
