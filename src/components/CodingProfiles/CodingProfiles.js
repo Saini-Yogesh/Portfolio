@@ -26,7 +26,7 @@ const CodingProfilesSection = () => {
   ];
 
   return (
-    <div className="coding-profiles-section">
+    <div id="Coding-profiles" className="coding-profiles-section">
       <h2>
         <i className="fa-solid fa-code"></i> My Programming Profiles
       </h2>
@@ -40,6 +40,7 @@ const CodingProfilesSection = () => {
             className="coding-profile-link"
           >
             <img
+              draggable="false"
               src={profile.icon}
               alt={`${profile.platform} icon`}
               className="coding-profile-icon"

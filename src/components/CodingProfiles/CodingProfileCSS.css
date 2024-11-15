@@ -18,6 +18,7 @@
   align-items: center;
   gap: 5vmin;
   margin-top: 5rem;
+  user-select: none;
 }
 
 .coding-profile-link {
@@ -33,6 +34,7 @@
   display: block;
   margin: 0 auto;
   transition: transform 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .coding-profile-link:hover .coding-profile-icon {

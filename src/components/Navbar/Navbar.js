@@ -50,6 +50,9 @@ const Navbar = () => {
           <a href="#Achievement" onClick={handleLinkClick}>
             Achievement
           </a>
+          <a href="#Coding-profiles" onClick={handleLinkClick}>
+            Coding Profiles
+          </a>
           <a href="#Contact" onClick={handleLinkClick}>
             Contact
           </a>

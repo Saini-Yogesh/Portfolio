@@ -21,7 +21,7 @@ const AboutMe = () => {
           </p>
         </div>
         <div className="about-image">
-          <img src={profileImage} alt="Profile" />
+          <img draggable="false" src={profileImage} alt="Profile" />
         </div>
       </div>
     </>

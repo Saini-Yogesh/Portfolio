@@ -1,5 +1,6 @@
 import React from "react";
 import "./ContactCSS.css";
+import ViewCounter from "../ViewCounter/ViewCounter";
 
 const Contact = () => {
   return (
@@ -38,6 +39,7 @@ const Contact = () => {
             2024 ❤️ © Designed and built by Yogesh Saini.
           </p>
         </div>
+        <ViewCounter />
       </div>
     </>
   );
