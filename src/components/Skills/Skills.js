@@ -31,8 +31,8 @@ const Skills = () => {
             <div className="skill-content">
               <h3>Frameworks</h3>
               <p>
-                Node.js, React.js, Next.js, Mongoose, Express, Bootstrap, REST
-                APIs
+                Node.js, React.js, Next.js, Mongoose, Express, Bootstrap,
+                Tailwind CSS, REST APIs
               </p>
             </div>
           </div>
@@ -40,7 +40,10 @@ const Skills = () => {
             <i className="fa-solid fa-wrench skill-icon"></i>
             <div className="skill-content">
               <h3>Developer Tools</h3>
-              <p>MongoDB, Postman, Thunder Client, VS Code, Git, GitHub</p>
+              <p>
+                MongoDB, Postman, Thunder Client, VS Code, Git, GitHub, Redux
+                and Redux Toolkit
+              </p>
             </div>
           </div>
           <div className="skill-item">

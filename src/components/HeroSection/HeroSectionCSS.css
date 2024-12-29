@@ -47,6 +47,11 @@
 }
 .hero-image {
   max-width: 25%;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
 }
 
 .hero-image img {

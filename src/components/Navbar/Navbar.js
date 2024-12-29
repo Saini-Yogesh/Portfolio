@@ -44,6 +44,9 @@ const Navbar = () => {
           <a href="#Skills" onClick={handleLinkClick}>
             Skills
           </a>
+          <a href="#Experience" onClick={handleLinkClick}>
+            Experience
+          </a>
           <a href="#Projects" onClick={handleLinkClick}>
             Projects
           </a>

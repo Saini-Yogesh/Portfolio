@@ -25,6 +25,11 @@
   background-color: #fff;
   border-left: 5px solid #005e66;
   width: 29%;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
 }
 
 .skill-icon {
@@ -41,26 +46,26 @@
 }
 
 .skill-content p {
-  margin: 0.5rem 0 0;
+  margin: 0.5rem 0;
   font-size: 1.2rem;
   color: #333;
 }
 
 /* Responsive Styling */
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .skill-item {
     width: 42%;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .skills-container {
     flex-direction: column;
     align-items: center;
   }
 
   .skill-item {
-    width: 95%;
+    width: 70%;
   }
 
   .skill-content h3 {
@@ -69,5 +74,11 @@
 
   .skill-content p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .skill-item {
+    width: 90%;
   }
 }

@@ -9,6 +9,7 @@ import Project from "./components/Project/Project";
 import Skills from "./components/Skills/Skills";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import CodingProfilesSection from "./components/CodingProfiles/CodingProfiles";
+import Experience from "./components/Experience/Experience";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <AboutMe />
       <Education />
       <Skills />
+      <Experience />
       <Project />
       <Achievement />
       <CodingProfilesSection />
