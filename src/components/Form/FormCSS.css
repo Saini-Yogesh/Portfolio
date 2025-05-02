@@ -1,16 +1,37 @@
+:root {
+  --cf-form-bg-color: #ffffff; /* Light background for form */
+  --cf-input-border-color: #d1d5db; /* Light gray border for inputs */
+  --cf-input-focus-color: #007bff; /* Blue focus border color */
+  --cf-input-text-color: #000; /* Black text color for light theme */
+  --cf-button-bg-color: #007bff; /* Blue background for button */
+  --cf-button-text-color: #ffffff; /* White text color for button */
+  --cf-button-hover-bg-color: #0056b3; /* Darker blue on hover */
+  --cf-placeholder-color: #6c757d; /* Light gray placeholder text */
+}
+
+body.dark {
+  --cf-form-bg-color: #333; /* Darker background for dark mode */
+  --cf-input-border-color: #666;
+  --cf-input-focus-color: #00ffff;
+  --cf-input-text-color: #fff; /* White text color for dark theme */
+  --cf-button-bg-color: #4e90ff;
+  --cf-button-text-color: #fff;
+  --cf-button-hover-bg-color: #006cbd;
+  --cf-placeholder-color: #ccc;
+}
+
 .contact-form {
   max-width: 800px;
   margin: 50px auto;
   padding: 30px;
-  background-color: #1e1e1e;
+  background-color: var(--cf-form-bg-color); /* Form background color */
   border-radius: 12px;
-  margin: 5rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Added shadow */
 }
 
 .contact-form h1 {
   text-align: center;
   margin-bottom: 40px;
-  color: #ffffff;
 }
 
 form {
@@ -32,29 +53,29 @@ form {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px 0px;
-  background-color: #1e1e1e;
+  padding: 12px 0;
+  background-color: var(--cf-form-bg-color); /* Background color */
   border: none;
-  border-bottom: 2px dotted #444;
-  color: white;
+  border-bottom: 2px dotted var(--cf-input-border-color); /* Input border color */
   outline: none;
+  color: var(--cf-input-text-color); /* Text color for input fields */
 }
 
 .row .form-group:not(:first-child) {
-  padding-left: 16px; /* space after border */
-  margin-left: 8px; /* optional spacing between inputs */
+  padding-left: 16px;
+  margin-left: 8px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-bottom: 2px dotted white;
+  border-bottom: 2px dotted var(--cf-input-focus-color); /* Focused input border */
 }
 
 button {
   align-self: start;
   padding: 12px 12px;
-  background-color: #d1d5db;
-  color: #000;
+  background-color: var(--cf-button-bg-color); /* Button background */
+  color: var(--cf-button-text-color); /* Button text color */
   border: none;
   border-radius: 24px;
   cursor: pointer;
@@ -62,12 +83,15 @@ button {
 }
 
 button:hover {
-  background-color: #c1c5cc;
+  background-color: var(
+    --cf-button-hover-bg-color
+  ); /* Button hover background */
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: white;
+  color: var(--cf-placeholder-color); /* Placeholder color */
+  font-weight: bold;
 }
 
 @media (max-width: 1000px) {

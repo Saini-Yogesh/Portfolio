@@ -1,3 +1,23 @@
+:root {
+  /* Light theme variables */
+  --theme-ribbon-top-bg-color: #f20063;
+  --theme-ribbon-bottom-bg-color: #e40050;
+  --theme-footer-text-color: #151515;
+  --theme-footer-icon-color: #151515;
+  --theme-footer-icon-border-color: #151515;
+  --theme-pulse-color: #e40050;
+  --theme-footer-border-color: #151515;
+}
+
+body.dark {
+  /* Dark theme variables */
+  --theme-footer-text-color: White;
+  --theme-footer-icon-color: White;
+  --theme-footer-icon-border-color: White;
+  --theme-pulse-color: #f20063;
+  --theme-footer-border-color: white;
+}
+
 .footer {
   padding: 2rem 10% 1rem 10%;
   text-align: center;
@@ -18,8 +38,10 @@
 
 .ribbon-top,
 .ribbon-bottom {
-  background-color: #f20063;
   color: white;
+  background-color: var(
+    --theme-ribbon-top-bg-color
+  ); /* Ribbon color stays same */
   font-weight: bold;
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -29,7 +51,9 @@
 }
 
 .ribbon-bottom {
-  background-color: #e40050;
+  background-color: var(
+    --theme-ribbon-bottom-bg-color
+  ); /* Ribbon color stays same */
   margin-left: 2rem;
 }
 
@@ -39,7 +63,7 @@
 
 .footer-find-text {
   font-size: 1.2rem;
-  color: #ccc;
+  color: var(--theme-footer-text-color); /* Text color changes based on theme */
   margin-bottom: 1rem;
   text-align: left;
   text-decoration: underline;
@@ -55,9 +79,9 @@
 
 .footer-icon {
   font-size: 4vmin;
-  color: white;
+  color: var(--theme-footer-icon-color); /* Icon color changes based on theme */
   padding: 0.7rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--theme-footer-icon-border-color); /* Border color changes based on theme */
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
   background: transparent;
@@ -65,12 +89,13 @@
 
 .footer-border {
   margin: 2rem auto;
-  border-top: 2px solid #888;
+  border-top: 2px solid var(--theme-footer-border-color); /* Border color changes based on theme */
 }
 
 .footer-text {
   font-size: 1rem;
   padding-top: 3vmin;
+  color: var(--theme-footer-text-color);
 }
 
 @media (max-width: 1000px) {
@@ -88,19 +113,23 @@
 @keyframes sequentialPulse {
   0%,
   100% {
-    border-color: #ccc;
-    color: white;
+    border-color: var(
+      --theme-footer-icon-border-color
+    ); /* Use icon border color */
+    color: var(--theme-footer-icon-color); /* Use icon color */
     box-shadow: none;
   }
   20% {
-    border-color: #f3004b;
-    color: #f3004b;
-    box-shadow: 0 0 10px #f3004b66;
+    border-color: var(--theme-pulse-color); /* Use pulse color */
+    color: var(--theme-pulse-color);
+    box-shadow: 0 0 10px var(--theme-pulse-color) 66;
   }
   33.33%,
   66.66% {
-    border-color: #ccc;
-    color: white;
+    border-color: var(
+      --theme-footer-icon-border-color
+    ); /* Use icon border color */
+    color: var(--theme-footer-icon-color); /* Use icon color */
     box-shadow: none;
   }
 }

@@ -18,14 +18,18 @@ body {
 
 /* Light theme overrides */
 :root {
-  --bg-color: white;
-  --text-color: black;
+  --bg-color: #abd1f7; /* Light blue-gray */
+  --text-color: #333c4d; /* Dark blue-gray */
+  --accent-color: #0066cc; /* Blue */
+  --link-hover-color: #005bb5; /* Darker blue for hover */
 }
 
 /* Dark theme overrides */
 body.dark {
-  --bg-color: #151515;
-  --text-color: white;
+  --bg-color: #151515; /* Dark background */
+  --text-color: white; /* White text */
+  --accent-color: #0dcaf0; /* Light cyan for accents */
+  --link-hover-color: #005bb5; /* Darker blue for hover */
 }
 
 /* Apply CSS variables throughout the app */
@@ -33,16 +37,28 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+:root {
+  --btn-shine-text-color: #007bff; /* Text color for light mode */
+  --btn-shine-glow: rgba(0, 123, 255, 0.2); /* Shine color for light mode */
+}
+
+body.dark {
+  --btn-shine-text-color: #4e90ff; /* Text color for dark mode */
+  --btn-shine-glow: rgba(78, 144, 255, 0.2); /* Shine color for dark mode */
+}
+
 .shine-button {
   position: relative;
   overflow: hidden;
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  color: #fff;
+  color: var(--btn-shine-text-color);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   z-index: 0;
+  transition: color 0.3s, border-color 0.3s;
+  background: transparent;
 }
 
 .shine-button::before {
@@ -55,7 +71,7 @@ body {
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 50%,
+    var(--btn-shine-glow) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-20deg);

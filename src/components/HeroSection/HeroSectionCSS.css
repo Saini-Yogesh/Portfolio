@@ -1,16 +1,84 @@
+:root {
+  --availability-bg: #0a0a0a;
+  --availability-border: #1f1f1f;
+  --availability-glow: rgba(0, 255, 174, 0.2);
+
+  --ping-color: #00ffae;
+  --ping-pulse: rgba(0, 255, 174, 0.4);
+
+  --hero-caret-color: #ffffff;
+
+  --hero-title-gradient-primary: linear-gradient(
+    90deg,
+    #fc466b,
+    #3f5efb,
+    #30cfd0,
+    #330867,
+    #ffcc70
+  );
+  --hero-title-gradient-secondary: linear-gradient(
+    90deg,
+    #f12711,
+    #f5af19,
+    #00b09b,
+    #96c93d,
+    #2980b9,
+    #8e44ad
+  );
+
+  --hero-button-border-color: #151515;
+  --hero-button-text: #151515;
+  --hero-button-fill: #ffff00;
+  --hero-button-fill-text: #151515;
+}
+
+body.dark {
+  --availability-bg: #1a1a1a;
+  --availability-border: #333;
+  --availability-glow: rgba(0, 255, 174, 0.4);
+
+  --ping-color: #00ffae;
+  --ping-pulse: rgba(0, 255, 174, 0.4);
+
+  --hero-caret-color: #ffffff;
+
+  --hero-title-gradient-primary: linear-gradient(
+    90deg,
+    #fc466b,
+    #3f5efb,
+    #30cfd0,
+    #330867,
+    #ffcc70
+  );
+  --hero-title-gradient-secondary: linear-gradient(
+    90deg,
+    #f12711,
+    #f5af19,
+    #00b09b,
+    #96c93d,
+    #2980b9,
+    #8e44ad
+  );
+
+  --hero-button-border-color: #ffff00;
+  --hero-button-text: white;
+  --hero-button-fill: #ffff00;
+  --hero-button-fill-text: #151515;
+}
+
 /* 🔵 Availability Badge Styles */
 .availability-badge {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #0a0a0a;
-  color: #fff;
+  color: white;
+  background-color: var(--availability-bg);
   padding: 0.5rem 1rem;
   border-radius: 999px;
   font-weight: 500;
-  border: 1px solid #1f1f1f;
-  box-shadow: 0 0 10px rgba(0, 255, 174, 0.2);
+  border: 1px solid var(--availability-border);
+  box-shadow: 0 0 10px var(--availability-glow);
   margin: 1rem auto;
   width: fit-content;
   text-align: center;
@@ -19,7 +87,7 @@
 .ping-dot {
   width: 10px;
   height: 10px;
-  background-color: #00ffae;
+  background-color: var(--ping-color);
   border-radius: 999px;
   position: relative;
 }
@@ -32,7 +100,7 @@
   width: 22px;
   height: 22px;
   border-radius: 999px;
-  background: rgba(0, 255, 174, 0.4);
+  background: var(--ping-pulse);
   animation: ping 1.5s infinite ease-in-out;
 }
 
@@ -59,8 +127,9 @@
   min-height: 70vh;
   gap: 2rem;
 }
+
 .hero-content h1 span {
-  border-right: 2px solid #fff; /* Typing cursor */
+  border-right: 2px solid var(--hero-caret-color); /* Typing cursor */
   padding-right: 2px;
   display: inline-block;
   animation: blink-caret 0.75s step-end infinite;
@@ -75,38 +144,21 @@
 .hero-content h1:first-of-type {
   font-size: 3rem;
   font-weight: 700;
-  background: linear-gradient(
-    90deg,
-    #fc466b,
-    #3f5efb,
-    #30cfd0,
-    #330867,
-    #ffcc70
-  );
+  background: var(--hero-title-gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .hero-content h1 {
-  background: linear-gradient(
-    90deg,
-    #f12711,
-    #f5af19,
-    #00b09b,
-    #96c93d,
-    #2980b9,
-    #8e44ad
-  );
+  background: var(--hero-title-gradient-secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero-content {
   max-width: 60%;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
 .hero-content p {
@@ -124,18 +176,20 @@
 .contact-link {
   text-decoration: none;
   text-align: center;
-  border: solid #ffff00 0.2vmin;
-  color: white;
+  border: solid var(--hero-button-border-color) 0.2vmin;
+  color: var(--hero-button-text);
   padding: 1rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 1vmin;
   min-width: 30vmin;
 }
+
 .join-button {
-  background-color: #ffff00;
-  color: #151515;
+  background-color: var(--hero-button-fill);
+  color: var(--hero-button-fill-text);
 }
+
 .hero-image {
   max-width: 25%;
   transition: transform 0.3s ease;

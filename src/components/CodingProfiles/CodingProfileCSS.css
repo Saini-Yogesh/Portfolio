@@ -7,7 +7,6 @@
   text-align: center;
   margin-bottom: 2rem;
   font-size: 3rem;
-  color: white;
 }
 
 .coding-profiles-container {
@@ -34,6 +33,7 @@
   margin: 0 auto;
   transition: transform 0.3s ease-in-out;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .coding-profile-link:hover .coding-profile-icon {

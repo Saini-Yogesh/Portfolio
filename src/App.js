@@ -11,12 +11,12 @@ import CodingProfilesSection from "./components/CodingProfiles/CodingProfiles";
 import Experience from "./components/Experience/Experience";
 import Form from "./components/Form/Form"
 import TapeSection from "./components/Tape/TapeSection";
-// import Snowfall from "./Snowfall";
+import BackgroundParticles from "./components/BackgroundEffect/BackgroundParticles";
 
 function App() {
   return (
     <>
-      {/* <Snowfall /> */}
+      <BackgroundParticles />
       <Navbar />
       <HeroSection />
       <AboutMe />

@@ -1,25 +1,42 @@
+:root {
+  --education-heading-color: #333c4d;
+  --education-bg-color: #bcdffb;
+  --education-border-color: #00ffff;
+  --education-hover-shadow: rgba(0, 255, 255, 0.5);
+  --education-text-color: #333;
+}
+
+body.dark {
+  --education-heading-color: white;
+  --education-bg-color: #333;
+  --education-border-color: #00ffff;
+  --education-hover-shadow: rgba(0, 255, 255, 0.5);
+  --education-text-color: white;
+}
+
 .education-section {
   padding: 60px 10% 2rem 10%;
 }
 
 .education-section h2 {
-  color: white;
   text-align: center;
   margin-bottom: 2rem;
   font-size: 3rem;
+  color: var(--education-heading-color);
 }
 
 .education-item {
   margin-bottom: 2rem;
   padding: 1rem;
   border-radius: 1rem;
-  border-left: 5px solid #00ffff;
-  background-color: #333;
+  border-left: 5px solid var(--education-border-color);
+  background-color: var(--education-bg-color);
   transition: transform 0.3s ease;
 }
+
 .education-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.10);
+  box-shadow: 0 4px 10px var(--education-hover-shadow);
 }
 
 .education-item:hover {
@@ -30,6 +47,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  color: var(--education-text-color);
 }
 
 .institute {

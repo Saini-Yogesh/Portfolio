@@ -16,7 +16,6 @@ const Projectitem = (props) => {
         delay: index * 0.1,
       }}
     >
-      <div className="color-strip"></div>
       <div className="project-content">
         <div className="project-details">
           <p style={{ color: "#ff0050" }}>— Frontend Dev.</p>

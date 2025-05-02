@@ -1,3 +1,21 @@
+:root {
+  --achieve-bg: #bcdffb;
+  --achieve-border: #00ffff;
+  --achieve-accent: #00ffff;
+  --achieve-hover-shadow: rgba(0, 255, 255, 0.5);
+  --achieve-link-hover: #ff6347;
+  --achieve-highlight: #059669;
+}
+
+body.dark {
+  --achieve-bg: #333;
+  --achieve-border: #00ffff;
+  --achieve-accent: #00ffff;
+  --achieve-hover-shadow: rgba(0, 255, 255, 0.5);
+  --achieve-link-hover: #ff6347;
+  --achieve-highlight: #34d399;
+}
+
 .achievements-section {
   padding: 60px 10% 2rem 10%;
 }
@@ -19,20 +37,21 @@
 .achievement-item {
   display: flex;
   align-items: flex-start;
-  background-color: #333; /* Darker background for items */
+  background-color: var(--achieve-bg);
   padding: 1rem;
   border-radius: 1rem;
-  border-left: 5px solid #00ffff; /* Lighter teal color for the left border */
+  border-left: 5px solid var(--achieve-border);
   width: 100%;
   transition: transform 0.3s ease;
 }
+
 .achievement-item:hover {
-  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 4px 10px var(--achieve-hover-shadow);
 }
 
 .achievement-icon {
   font-size: 2rem;
-  color: #00ffff; /* Lighter teal color for icons */
+  color: var(--achieve-accent);
   margin-right: 1rem;
 }
 
@@ -43,13 +62,13 @@
 
 .achievement-link {
   margin-left: 0.5rem;
-  color: #00ffff; /* Lighter teal color for the links */
+  color: var(--achieve-accent);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .achievement-link:hover {
-  color: #ff6347; /* Bright color on hover for better contrast */
+  color: var(--achieve-link-hover);
 }
 
 @media (max-width: 768px) {
@@ -67,6 +86,6 @@
 }
 
 .highlight {
-  color: #34d399;
+  color: var(--achieve-highlight);
   font-weight: bold;
 }

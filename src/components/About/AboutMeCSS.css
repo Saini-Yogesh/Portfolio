@@ -1,3 +1,15 @@
+:root {
+  --about-heading-color: #333c4d;
+  --about-paragraph-color: #4a4a4a;
+  --about-image-bg: transparent;
+}
+
+body.dark {
+  --about-heading-color: white;
+  --about-paragraph-color: #ccc;
+  --about-image-bg: transparent;
+}
+
 .about-section {
   display: flex;
   justify-content: space-around;
@@ -9,15 +21,17 @@
 .about-content {
   max-width: 40%;
 }
+
 .about-content h1 {
   font-size: 3rem;
   padding: 1rem 0 1rem 0;
-  color: #ffffff;
+  color: var(--about-heading-color);
 }
+
 .about-content p {
   font-size: 1.2rem;
   line-height: 1.5;
-  color: #d1d1d1;
+  color: var(--about-paragraph-color);
 }
 
 .about-image {
@@ -29,6 +43,7 @@
   width: 100%;
   border-radius: 50%;
   background-size: contain;
+  background-color: var(--about-image-bg);
 }
 
 @media (max-width: 930px) {
@@ -43,9 +58,6 @@
 
   .about-image {
     max-width: 70%;
-  }
-
-  .about-image {
     margin-top: 2rem;
   }
 }
