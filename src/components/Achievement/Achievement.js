@@ -5,27 +5,43 @@ import "./AchievementCSS.css";
 const Achievement = () => {
   const achievementsData = [
     {
-      text: "Received T-Shirt from GeeksforGeeks for solving 100 ”Problem of the Day” challenges on GeeksforGeeks.",
-      link: "https://drive.google.com/file/d/1Sh4zaZrIoVNTQWBh-VdDWCR-Tf4u_UDh/view?usp=sharing",
-    },
-    {
-      text: "Achieved a global rank of 982 out of 34,698 participants in LeetCode Biweekly Contest 135.",
+      text: (
+        <>
+          Achieved a global rank of <span className="highlight">982</span> out of <span className="highlight">34,698</span> participants in LeetCode Biweekly Contest 135.
+        </>
+      ),
       link: "https://leetcode.com/contest/biweekly-contest-135/ranking",
     },
     {
-      text: "Solved 1,100+ DSA problems on LeetCode, GFG, Codeforces, and CodeChef.",
+      text: (
+        <>
+          Solved <span className="highlight">1,200+</span> DSA problems on LeetCode, GFG, Codeforces, and CodeChef.
+        </>
+      ),
       link: "/",
     },
     {
-      text: "LeetCode 1790+ maximum contest rating, top 8% globally.",
+      text: (
+        <>
+          LeetCode <span className="highlight">1790+</span> maximum contest rating, top <span className="highlight">8%</span> globally.
+        </>
+      ),
       link: "https://leetcode.com/u/yogesh_1___/",
     },
     {
-      text: "CodeChef 1570+ maximum contest rating.",
+      text: (
+        <>
+          <span className="highlight">3-star</span> on CodeChef with a maximum contest rating of <span className="highlight">1630+</span>.
+        </>
+      ),
       link: "https://www.codechef.com/users/yogesh_1_saini",
     },
     {
-      text: "Codeforces 1220+ maximum contest rating.",
+      text: (
+        <>
+          <span className="highlight">Pupil</span> on Codeforces with a maximum rating of <span className="highlight">1360+</span>.
+        </>
+      ),
       link: "https://codeforces.com/profile/yogesh_1___",
     },
   ];

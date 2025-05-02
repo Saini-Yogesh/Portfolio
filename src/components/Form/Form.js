@@ -19,33 +19,28 @@ const Form = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        "service_fa6y9hk",
+    try {
+      const result = await emailjs.send(
+        "service_lwd4z2k",
         "template_9s610sh",
         formData,
         "yhe7iUd8gmUgVzmh6"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log(error.text);
-          alert("Failed to send the message, please try again.");
-        }
       );
-
-    setFormData({
-      user_name: "",
-      user_email: "",
-      subject: "",
-      message: "",
-    });
+      console.log(result.text);
+      alert("Message sent successfully!");
+      setFormData({
+        user_name: "",
+        user_email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error.text);
+      alert("Failed to send the message, please try again.");
+    }
   };
 
   const fieldAnim = {

@@ -6,8 +6,8 @@
 .tape-gradient {
   background: linear-gradient(
     to right,
-    #6ee7b7,
-    #38bdf8
+    #6366f1,
+    #8b5cf6
   ); /* emerald-300 to sky-400 */
   transform: rotate(-3deg);
   margin: 0 -4px;

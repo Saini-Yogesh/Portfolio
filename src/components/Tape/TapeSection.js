@@ -3,7 +3,7 @@ import "./TapeSectionCSS.css";
 import { ReactComponent as StarIcon } from "./star.svg"; // Ensure svgr is supported
 
 const words = [
-    "Performant",
+    "End-to-End Web App",
     "Reliable",
     "Responsive",
     "Robust",
@@ -13,8 +13,10 @@ const words = [
     "User Friendly",
     "Maintainable",
     "Interactive",
-    "Search Optimized",
+    "Optimized",
     "Usable",
+    "Rapid Prototyping",
+    "Feature-Rich"
 ];
 
 const TapeSection = () => {

@@ -65,3 +65,8 @@
     font-size: 1rem;
   }
 }
+
+.highlight {
+  color: #34d399;
+  font-weight: bold;
+}
