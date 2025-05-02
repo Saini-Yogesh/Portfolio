@@ -2,11 +2,11 @@
   --cf-form-bg-color: #ffffff; /* Light background for form */
   --cf-input-border-color: #d1d5db; /* Light gray border for inputs */
   --cf-input-focus-color: #007bff; /* Blue focus border color */
-  --cf-input-text-color: #000; /* Black text color for light theme */
+  --cf-input-text-color: #151515; /* Black text color for light theme */
   --cf-button-bg-color: #007bff; /* Blue background for button */
   --cf-button-text-color: #ffffff; /* White text color for button */
   --cf-button-hover-bg-color: #0056b3; /* Darker blue on hover */
-  --cf-placeholder-color: #6c757d; /* Light gray placeholder text */
+  --cf-placeholder-color: #151515; /* Light gray placeholder text */
 }
 
 body.dark {
