@@ -58,7 +58,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <a className="logo" href="/">
+        <a className="logo" href="/Portfolio">
           <img src={Logo} alt="Logo" className="logo-img" />
         </a>
         <div className="navbar-right">
