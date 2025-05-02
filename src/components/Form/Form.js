@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./FormCSS.css";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 const Form = () => {
   const [formData, setFormData] = useState({
+    user_name: "",
     user_email: "",
+    subject: "",
     message: "",
   });
 
@@ -21,10 +24,10 @@ const Form = () => {
 
     emailjs
       .send(
-        "service_fa6y9hk", // Replace with your EmailJS service ID
-        "template_9s610sh", // Replace with your EmailJS template ID
+        "service_fa6y9hk",
+        "template_9s610sh",
         formData,
-        "yhe7iUd8gmUgVzmh6" // Replace with your EmailJS user ID
+        "yhe7iUd8gmUgVzmh6"
       )
       .then(
         (result) => {
@@ -38,47 +41,111 @@ const Form = () => {
       );
 
     setFormData({
+      user_name: "",
       user_email: "",
+      subject: "",
       message: "",
     });
   };
 
+  const fieldAnim = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  };
+
   return (
-    <>
-      <div className="contact-form">
-        <div className="contact-form-container">
-          <h1>
-            <i className="fa-solid fa-user"></i> Contact Me
-          </h1>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="user_email">Email:</label>
-              <input
-                type="email"
-                id="user_email"
-                name="user_email"
-                value={formData.user_email}
-                onChange={handleChange}
-                placeholder="Enter Your Mail......"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message:</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Enter some text here......"
-                required
-              ></textarea>
-            </div>
-            <button type="submit">Send</button>
-          </form>
-        </div>
-      </div>
-    </>
+    <motion.div
+      className="contact-form"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.3 }}
+      variants={{
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+      }}
+    >
+      <motion.h1
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: { opacity: 0, y: -20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+        }}
+      >
+        <i className="fa-solid fa-user"></i> Contact Me
+      </motion.h1>
+
+      <motion.form
+        onSubmit={handleSubmit}
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
+      >
+        <motion.div className="row" variants={fieldAnim}>
+          <motion.div className="form-group" variants={fieldAnim}>
+            <input
+              type="text"
+              id="user_name"
+              name="user_name"
+              value={formData.user_name}
+              onChange={handleChange}
+              placeholder="Name"
+              required
+            />
+          </motion.div>
+          <motion.div className="form-group" variants={fieldAnim}>
+            <input
+              type="email"
+              id="user_email"
+              name="user_email"
+              value={formData.user_email}
+              onChange={handleChange}
+              placeholder="Email"
+              required
+            />
+          </motion.div>
+        </motion.div>
+
+        <motion.div className="form-group" variants={fieldAnim}>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            placeholder="Subject"
+          />
+        </motion.div>
+
+        <motion.div className="form-group" variants={fieldAnim}>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Message..."
+            required
+          ></textarea>
+        </motion.div>
+
+        <motion.button
+          type="submit"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          variants={fieldAnim}
+        >
+          Submit
+        </motion.button>
+      </motion.form>
+    </motion.div>
   );
 };
 

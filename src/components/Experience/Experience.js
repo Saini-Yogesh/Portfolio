@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ExperienceCSS.css";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   const experiences = [
@@ -30,12 +31,40 @@ const Experience = () => {
 
   return (
     <section id="Experience" className="experience-section">
-      <h2 className="section-title">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <i className="fa-solid fa-business-time"></i> Experience
-      </h2>
-      <div className="experience-timeline">
+      </motion.h2>
+      <motion.div
+        className="experience-timeline"
+        initial="hidden"
+        whileInView="show"
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.2, // Add staggered animation for items
+            },
+          },
+        }}
+      >
         {experiences.map((experience, index) => (
-          <div key={index} className="timeline-item">
+          <motion.div
+            key={index}
+            className="timeline-item"
+            initial={{ opacity: 0, x: -30 }} // Start from the left and invisible
+            whileInView={{ opacity: 1, x: 0 }} // Move into place with full opacity
+            transition={{
+              duration: 0.6,
+              type: "spring",
+              stiffness: 100,
+              damping: 25,
+              delay: 0.15 * index, // Delay between items
+            }}
+          >
             <div className="timeline-content">
               <h3>{experience.role}</h3>
               <p className="organization">{experience.organization}</p>
@@ -53,9 +82,9 @@ const Experience = () => {
                 </span>
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

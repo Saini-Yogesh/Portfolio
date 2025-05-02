@@ -2,31 +2,27 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #bab3a97f;
-  color: #151515;
   padding: 4rem 2rem 2rem 2rem;
   min-height: 50vh;
 }
 
 .about-content {
-  max-width: 50%;
+  max-width: 40%;
 }
 .about-content h1 {
   font-size: 3rem;
   padding: 1rem 0 1rem 0;
+  color: #ffffff;
 }
 .about-content p {
   font-size: 1.2rem;
   line-height: 1.5;
+  color: #d1d1d1;
 }
 
 .about-image {
   max-width: 30%;
   transition: transform 0.3s ease;
-}
-
-.about-image:hover {
-  transform: scale(1.05);
 }
 
 .about-image img {

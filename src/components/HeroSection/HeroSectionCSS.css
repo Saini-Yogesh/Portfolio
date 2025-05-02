@@ -1,12 +1,103 @@
+/* 🔵 Availability Badge Styles */
+.availability-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 0 10px rgba(0, 255, 174, 0.2);
+  margin: 1rem auto;
+  width: fit-content;
+  text-align: center;
+}
+
+.ping-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #00ffae;
+  border-radius: 999px;
+  position: relative;
+}
+
+.ping-dot::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(0, 255, 174, 0.4);
+  animation: ping 1.5s infinite ease-in-out;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 .hero-section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #151515;
-  color: white;
   padding: 2rem;
-  min-height: 90vh;
+  min-height: 70vh;
   gap: 2rem;
+}
+.hero-content h1 span {
+  border-right: 2px solid #fff; /* Typing cursor */
+  padding-right: 2px;
+  display: inline-block;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.hero-content h1:first-of-type {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #fc466b,
+    #3f5efb,
+    #30cfd0,
+    #330867,
+    #ffcc70
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-content h1 {
+  background: linear-gradient(
+    90deg,
+    #f12711,
+    #f5af19,
+    #00b09b,
+    #96c93d,
+    #2980b9,
+    #8e44ad
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-content {

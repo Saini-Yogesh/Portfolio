@@ -1,7 +1,5 @@
 .projects-section {
   padding: 60px 2rem 2rem 2rem;
-  background-color: #151515;
-  color: #333;
 }
 
 .projects-section h2 {
@@ -13,16 +11,8 @@
 
 .projects-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
-}
-
-@media (max-width: 1100px) {
-  .projects-container {
-    gap: 2rem;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
 }

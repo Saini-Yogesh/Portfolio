@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import framer-motion for animations
 import "./AchievementCSS.css";
 
 const Achievement = () => {
@@ -30,31 +31,46 @@ const Achievement = () => {
   ];
 
   return (
-    <>
-      <div id="Achievement" className="achievements-section">
-        <h2>
-          <i className="fa-solid fa-medal section-icon"></i> Achievements
-        </h2>
-        <div className="achievements-container">
-          {achievementsData.map((achievement, index) => (
-            <div key={index} className="achievement-item">
-              <i className="fa-solid fa-award achievement-icon"></i>
-              <p className="achievement-text">
-                {achievement.text}
-                <a
-                  href={achievement.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="achievement-link"
-                >
-                  [Link]
-                </a>
-              </p>
-            </div>
-          ))}
-        </div>
+    <div id="Achievement" className="achievements-section">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: .8, ease: "easeOut" }}
+      >
+        <i className="fa-solid fa-medal section-icon"></i> Achievements
+      </motion.h2>
+
+      <div className="achievements-container">
+        {achievementsData.map((achievement, index) => (
+          <motion.div
+            key={index}
+            className="achievement-item"
+            initial={{ opacity: 0, x: -30 }} // Start from the left and invisible
+            whileInView={{ opacity: 1, x: 0 }} // Move into place with full opacity
+            transition={{
+              duration: 0.6, // Shortened duration for a smoother animation
+              type: "spring",
+              stiffness: 100, // Increased stiffness for quicker spring movement
+              damping: 25, // Slightly reduced damping for smoother motion
+              delay: 0.15 * index, // Reduced delay between items
+            }}
+          >
+            <i className="fa-solid fa-award achievement-icon"></i>
+            <p className="achievement-text">
+              {achievement.text}
+              <a
+                href={achievement.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="achievement-link"
+              >
+                [Link]
+              </a>
+            </p>
+          </motion.div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

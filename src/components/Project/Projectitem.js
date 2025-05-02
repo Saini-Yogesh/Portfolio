@@ -1,59 +1,68 @@
-import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./ProjectItemCSS.css";
 
 const Projectitem = (props) => {
-  const { sourceCodeLink, deployedLink, name, description, languages, image } =
-    props;
-  const [showFullDescription, setShowFullDescription] = useState(false);
-
-  const toggleDescription = () => {
-    setShowFullDescription(!showFullDescription);
-  };
-
-  const shortDescription =
-    description.length > 250
-      ? description.substring(0, 150) + "..."
-      : description;
+  const { sourceCodeLink, deployedLink, name, description, languages, image, index } = props;
+  const isImageLeft = index % 2 !== 0;
 
   return (
-    <div className="project-card">
-      <div className="project-image">
-        <img src={image} alt={`${name} Screenshot`} />
+    <motion.div
+      className={`project-card ${isImageLeft ? "reverse" : ""}`}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: index * 0.1,
+      }}
+    >
+      <div className="color-strip"></div>
+      <div className="project-content">
+        <div className="project-details">
+          <p style={{ color: "#ff0050" }}>— Frontend Dev.</p>
+          <h3 className="project-title">{name}</h3>
+          <p>{description}</p>
+          <div className="tech-tags">
+            {languages.split("|").map((lang, tagIndex) => (
+              <motion.span
+                key={lang.trim()}
+                className="tech-tag"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + tagIndex * 0.05 }}
+              >
+                {lang.trim()}
+              </motion.span>
+            ))}
+          </div>
+          <motion.a
+            href={sourceCodeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn shine-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            GitHub ↗
+          </motion.a>
+          <motion.a
+            href={deployedLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn shine-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Live Demo ↗
+          </motion.a>
+        </div>
+        <div className="project-image">
+          <div className="image-wrapper">
+            <img src={image} alt={`${name} Screenshot`} />
+          </div>
+        </div>
       </div>
-      <div className="project-details">
-        <h3 className="project-tittle">{name}</h3>
-        <p>
-          <strong>About: </strong>
-          {showFullDescription ? description : shortDescription}
-          {description.length > 250 && (
-            <span onClick={toggleDescription} className="see-more-link">
-              {showFullDescription ? " See less" : " See more"}
-            </span>
-          )}
-        </p>
-        <strong>
-          <p>Tech Stack: {languages}</p>
-        </strong>
-      </div>
-      <div className="project-buttons">
-        <a
-          href={sourceCodeLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn"
-        >
-          GitHub
-        </a>
-        <a
-          href={deployedLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn"
-        >
-          Live Demo
-        </a>
-      </div>
-    </div>
+    </motion.div>
   );
 };
 

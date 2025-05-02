@@ -1,7 +1,5 @@
 .education-section {
   padding: 60px 10% 2rem 10%;
-  background-color: #151515;
-  color: black;
 }
 
 .education-section h2 {
@@ -14,9 +12,14 @@
 .education-item {
   margin-bottom: 2rem;
   padding: 1rem;
-  border-left: 5px solid #005e66;
-  background-color: #fff;
+  border-radius: 1rem;
+  border-left: 5px solid #00ffff;
+  background-color: #333;
   transition: transform 0.3s ease;
+}
+.education-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.10);
 }
 
 .education-item:hover {
@@ -36,15 +39,10 @@
 
 .location {
   font-style: italic;
-  color: #888;
 }
 
 .degree {
   font-size: 1.2rem;
-}
-
-.year {
-  color: #888;
 }
 
 /* Responsive Styling */

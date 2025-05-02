@@ -1,29 +1,66 @@
 .footer {
-  background-color: #151515;
-  color: white;
   padding: 2rem 10% 1rem 10%;
   text-align: center;
 }
 
 .footer-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.footer-icons {
+.footer-ribbon {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 220px;
+}
+
+.ribbon-top,
+.ribbon-bottom {
+  background-color: #f20063;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  transform: rotate(-5deg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 1.2rem;
+}
+
+.ribbon-bottom {
+  background-color: #e40050;
+  margin-left: 2rem;
+}
+
+.footer-icons {
+  padding-top: 2rem;
+}
+
+.footer-find-text {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.icon-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Keeps space between icons */
+  align-items: center; /* Centers icons vertically */
 }
 
 .footer-icon {
-  font-size: 7vmin;
+  font-size: 4vmin;
   color: white;
-  transition: transform 0.3s ease-in-out;
-}
-
-.footer-icon:hover {
-  transform: scale(1.15);
+  padding: 0.7rem;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
 }
 
 .footer-border {
@@ -34,4 +71,54 @@
 .footer-text {
   font-size: 1rem;
   padding-top: 3vmin;
+}
+
+@media (max-width: 1000px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .ribbon-top,
+  .ribbon-bottom {
+    font-size: 1rem;
+  }
+}
+
+/* Keyframe for pulsing one icon at a time */
+@keyframes sequentialPulse {
+  0%,
+  100% {
+    border-color: #ccc;
+    color: white;
+    box-shadow: none;
+  }
+  20% {
+    border-color: #f3004b;
+    color: #f3004b;
+    box-shadow: 0 0 10px #f3004b66;
+  }
+  33.33%,
+  66.66% {
+    border-color: #ccc;
+    color: white;
+    box-shadow: none;
+  }
+}
+
+/* Shared duration for the loop */
+.footer-icon {
+  animation: sequentialPulse 3s infinite;
+}
+
+/* Delay each icon for sequential effect */
+.footer-icon.fa-linkedin {
+  animation-delay: 0s;
+}
+
+.footer-icon.fa-github {
+  animation-delay: 1s;
+}
+
+.footer-icon.fa-envelope {
+  animation-delay: 2s;
 }

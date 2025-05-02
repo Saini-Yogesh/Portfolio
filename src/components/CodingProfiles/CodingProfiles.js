@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./CodingProfileCSS.css";
 
 const CodingProfilesSection = () => {
@@ -27,27 +28,56 @@ const CodingProfilesSection = () => {
 
   return (
     <div id="Coding-profiles" className="coding-profiles-section">
-      <h2>
+      <motion.h2
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+        }}
+      >
         <i className="fa-solid fa-code"></i> My Programming Profiles
-      </h2>
-      <div className="coding-profiles-container">
+      </motion.h2>
+
+      <motion.div
+        className="coding-profiles-container"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          ease: "linear",
+        }}
+      >
         {codingProfiles.map((profile, index) => (
-          <a
+          <motion.a
             key={index}
             href={profile.link}
             target="_blank"
             rel="noopener noreferrer"
             className="coding-profile-link"
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+              delay: 0.2 * index,
+            }}
           >
-            <img
+            <motion.img
               draggable="false"
               src={profile.icon}
-              alt={`${profile.platform} icon`}
+              alt={`Platform ${index + 1} icon`}
               className="coding-profile-icon"
+              initial={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+              }}
             />
-          </a>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
