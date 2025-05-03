@@ -29,10 +29,11 @@ const CodingProfilesSection = () => {
   return (
     <div id="Coding-profiles" className="coding-profiles-section">
       <motion.h2
-        initial={{ opacity: 0, x: -200 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.2 }}
         transition={{
-          duration: 1,
+          duration: 0.6,
           ease: "easeOut",
         }}
       >
@@ -55,28 +56,24 @@ const CodingProfilesSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="coding-profile-link"
-            initial={{ opacity: 0, x: -200 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ amount: 0.2 }}
             transition={{
-              duration: 1,
+              duration: 0.6,
               ease: "easeOut",
-              delay: 0.2 * index,
+              delay: 0.1 * index,
             }}
           >
-            <motion.img
+            <img
               draggable="false"
               src={profile.icon}
               alt={`Platform ${index + 1} icon`}
               className="coding-profile-icon"
-              initial={{ opacity: 0, x: -200 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 1,
-                ease: "easeOut",
-              }}
             />
           </motion.a>
         ))}
+
       </motion.div>
     </div>
   );

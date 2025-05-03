@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import "./ProjectItemCSS.css";
 
 const Projectitem = (props) => {
-  const { sourceCodeLink, deployedLink, name, description, languages, image, index } = props;
+  const { sourceCodeLink, deployedLink, name, description, languages, image, index, projectType } = props;
   const isImageLeft = index % 2 !== 0;
 
   return (
@@ -18,7 +18,7 @@ const Projectitem = (props) => {
     >
       <div className="project-content">
         <div className="project-details">
-          <p style={{ color: "#ff0050" }}>— Frontend Dev.</p>
+          <p style={{ color: "#ff0050" }}>— {projectType}</p>
           <h3 className="project-title">{name}</h3>
           <p>{description}</p>
           <div className="tech-tags">
