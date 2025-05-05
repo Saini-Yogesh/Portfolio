@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import AboutMe from "./components/About/AboutMe";
 import Achievement from "./components/Achievement/Achievement";
 import Contact from "./components/Contact/Contact";
@@ -12,8 +13,19 @@ import Experience from "./components/Experience/Experience";
 import Form from "./components/Form/Form"
 import TapeSection from "./components/Tape/TapeSection";
 import BackgroundParticles from "./components/BackgroundEffect/BackgroundParticles";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading delay (e.g., 2 seconds)
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <LoadingScreen />;
+
   return (
     <>
       <BackgroundParticles />

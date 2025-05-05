@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutMeCSS.css";
-import profileImage from "./myPhoto.jpg";
+import profileImage from "../../images/myPhoto2.jpg";
 import { motion } from "framer-motion";
 
 const AboutMe = () => {

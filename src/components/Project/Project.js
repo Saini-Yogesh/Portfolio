@@ -1,10 +1,10 @@
 import React from "react";
 import "./ProjectCSS.css";
 import Projectitem from "./Projectitem";
-import SGT from "./Images/SGT.png";
-import eCommerceStore from "./Images/E-commerce-store.png";
-import TripConnect from "./Images/TripConnect.png";
-import FlowBuilder from "./Images/Flow-Builder.png";
+import SGT from "../../images/projectImages/SGT.png";
+import eCommerceStore from "../../images/projectImages/E-commerce-store.png";
+import TripConnect from "../../images/projectImages/TripConnect.png";
+import FlowBuilder from "../../images/projectImages/Flow-Builder.png";
 
 const Project = () => {
   const projectData = [

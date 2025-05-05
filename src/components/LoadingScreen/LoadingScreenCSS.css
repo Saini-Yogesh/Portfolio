@@ -1,0 +1,30 @@
+:root {
+  /* Light theme */
+  --loading-bg-color: #ffffff;
+  --loading-logo-shadow: rgba(0, 0, 0, 0.5);
+}
+
+body.dark {
+  /* Dark theme */
+  --loading-bg-color: #151515;
+  --loading-logo-shadow: rgba(13, 202, 240, 0.8);
+}
+
+.loading-container {
+  position: fixed;
+  inset: 0;
+  background-color: var(--loading-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0 2px 10px var(--loading-logo-shadow);
+}

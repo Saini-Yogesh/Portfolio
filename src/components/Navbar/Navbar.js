@@ -4,7 +4,7 @@ import { ThemeContext } from "../../ThemeContext";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import Logo from "./logo.png";
+import Logo from "../../images/logo.png";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
