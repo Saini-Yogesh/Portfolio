@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./HeroSectionCSS.css";
-import heroImage from "../../images/myPhoto1.jpg";
+// import heroImage from "../../images/myPhoto1.jpg";
 import { motion } from "framer-motion";
+import Temp from "../temp/temp"
 
 // Typing effect component
 const TypingEffect = ({ text, speed, loop }) => {
@@ -107,15 +108,15 @@ const HeroSection = () => {
             </a>
           </motion.div>
         </div>
-
-        <motion.div
+        <Temp />
+        {/* <motion.div
           className="hero-image"
           initial={{ opacity: 0, scale: 0.4 }}
           animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
           <img draggable="false" src={heroImage} alt="Hero" />
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
