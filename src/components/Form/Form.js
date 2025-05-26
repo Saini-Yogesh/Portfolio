@@ -11,6 +11,8 @@ const Form = () => {
     message: "",
   });
 
+  const [buttonBlock, setButtonBlock] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -21,15 +23,17 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setButtonBlock(true);
 
     try {
+      // eslint-disable-next-line
       const result = await emailjs.send(
         "service_lwd4z2k",
         "template_9s610sh",
         formData,
         "yhe7iUd8gmUgVzmh6"
       );
-      console.log(result.text);
+      // console.log(result.text);
       alert("Message sent successfully!");
       setFormData({
         user_name: "",
@@ -40,6 +44,8 @@ const Form = () => {
     } catch (error) {
       console.error(error.text);
       alert("Failed to send the message, please try again.");
+    } finally {
+      setButtonBlock(false);
     }
   };
 
@@ -133,11 +139,24 @@ const Form = () => {
 
         <motion.button
           type="submit"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          disabled={buttonBlock}
+          whileHover={{ scale: buttonBlock ? 1 : 1.05 }}
+          whileTap={{ scale: buttonBlock ? 1 : 0.95 }}
           variants={fieldAnim}
+          style={{
+            opacity: buttonBlock ? 0.6 : 1,
+            cursor: buttonBlock ? "not-allowed" : "pointer",
+            pointerEvents: buttonBlock ? "none" : "auto",
+          }}
         >
-          Submit
+          {buttonBlock ? (
+            <>
+              <i className="fa fa-spinner fa-spin" style={{ marginRight: "8px" }}></i>
+              Sending...
+            </>
+          ) : (
+            "Submit"
+          )}
         </motion.button>
       </motion.form>
     </motion.div>

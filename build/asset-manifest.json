@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.b995ea8b.css",
-    "main.js": "/Portfolio/static/js/main.33faeafa.js",
+    "main.css": "/Portfolio/static/css/main.99e47223.css",
+    "main.js": "/Portfolio/static/js/main.254f20e9.js",
     "static/js/453.1407b060.chunk.js": "/Portfolio/static/js/453.1407b060.chunk.js",
     "static/media/TripConnect.png": "/Portfolio/static/media/TripConnect.91abd21a463ee95115cc.png",
     "static/media/myPhoto2.jpg": "/Portfolio/static/media/myPhoto2.760d2048aace7f2337ae.jpg",
     "static/media/E-commerce-store.png": "/Portfolio/static/media/E-commerce-store.442c0760eac36617fab8.png",
     "static/media/Flow-Builder.png": "/Portfolio/static/media/Flow-Builder.61f63a3f818087a33578.png",
     "static/media/SGT.png": "/Portfolio/static/media/SGT.fc0d5b4ce6e13cb54e58.png",
-    "static/media/myPhoto1.jpg": "/Portfolio/static/media/myPhoto1.9005d463565a70bea243.jpg",
     "static/media/logo.png": "/Portfolio/static/media/logo.151453bd2b6a8be77cda.png",
     "index.html": "/Portfolio/index.html",
     "static/media/star.svg": "/Portfolio/static/media/star.bbd7068825eac8b1987e0f2373ea191c.svg",
-    "main.b995ea8b.css.map": "/Portfolio/static/css/main.b995ea8b.css.map",
-    "main.33faeafa.js.map": "/Portfolio/static/js/main.33faeafa.js.map",
+    "main.99e47223.css.map": "/Portfolio/static/css/main.99e47223.css.map",
+    "main.254f20e9.js.map": "/Portfolio/static/js/main.254f20e9.js.map",
     "453.1407b060.chunk.js.map": "/Portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b995ea8b.css",
-    "static/js/main.33faeafa.js"
+    "static/css/main.99e47223.css",
+    "static/js/main.254f20e9.js"
   ]
 }
