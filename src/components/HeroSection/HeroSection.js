@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./HeroSectionCSS.css";
 // import heroImage from "../../images/myPhoto1.jpg";
 import { motion } from "framer-motion";
-import Temp from "../temp/temp"
+import TechGlobe from "../TechGlobe/TechGlobe"
 
 // Typing effect component
 const TypingEffect = ({ text, speed, loop }) => {
@@ -108,7 +108,7 @@ const HeroSection = () => {
             </a>
           </motion.div>
         </div>
-        <Temp />
+        <TechGlobe />
         {/* <motion.div
           className="hero-image"
           initial={{ opacity: 0, scale: 0.4 }}

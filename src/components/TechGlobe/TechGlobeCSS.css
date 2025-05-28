@@ -1,0 +1,31 @@
+.iconssphear-section {
+  margin: 20px 10px;
+  font-family: monospace;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease-out, transform 0.2s ease-out;
+}
+
+.iconssphear-section h3 {
+  font-size: 35px;
+  font-weight: 250;
+}
+
+.iconssphear-tag-cloud {
+  height: 375px;
+  width: 375px;
+  margin: 0 auto;
+}
+
+.fade-in {
+  opacity: 8 !important;
+  transform: translateY(0) !important;
+}
+
+@media screen and (max-width: 804px) {
+  .iconssphear-tag-cloud {
+    width: 100%;
+    max-width: 375px;
+  }
+}
+
