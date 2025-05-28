@@ -67,47 +67,42 @@ const SkillTagCloud = () => {
       return points;
     }
 
-    function findNeighbors(points, k = 5) {
-      const neighbors = [];
-      for (let i = 0; i < points.length; i++) {
-        // Calculate distances to all other points
-        const distances = points.map((p, idx) => ({
-          idx,
-          dist: points[i].distanceTo(p)
-        }));
-        // Sort by distance, ignoring self (distance=0)
-        distances.sort((a, b) => a.dist - b.dist);
-        // Take k closest neighbors after the first one (which is itself)
-        neighbors[i] = distances.slice(1, k + 1).map(d => d.idx);
-      }
-      return neighbors;
-    }
-
     const points = fibonacciSpherePoints(iconTextures.length, radius);
 
-    function connectIconsWithLines() {
-      const neighbors = findNeighbors(points, 5);
-
-      neighbors.forEach((neighborIndices, i) => {
-        const origin = sprites[i].position;
-        neighborIndices.forEach(j => {
-          const dest = sprites[j].position;
-
-          const material = new THREE.LineBasicMaterial({ color: 0x8888, opacity: 0.2, transparent: true });
-          const geometry = new THREE.BufferGeometry().setFromPoints([origin, dest]);
-          const line = new THREE.Line(geometry, material);
-          group.add(line);
-
-          // 🌟 Add glow sphere at the origin
-          // const glow = new THREE.Mesh(
-          //   new THREE.SphereGeometry(0.3, 8, 8),
-          //   new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 0.4 })
-          // );
-          // glow.position.copy(origin);
-          // group.add(glow);
-        });
+    const connectIconsWithLines = () => {
+      const lineMaterial = new THREE.LineBasicMaterial({
+        color: 0x00ffff,
+        transparent: true,
+        opacity: 0.3,
       });
-    }
+
+      for (let i = 0; i < sprites.length; i++) {
+        for (let j = i + 1; j < sprites.length; j++) {
+          const pos1 = sprites[i].position;
+          const pos2 = sprites[j].position;
+          const distance = pos1.distanceTo(pos2);
+
+          // Adjust threshold based on density and radius
+          if (distance < radius * 1) {
+            const geometry = new THREE.BufferGeometry().setFromPoints([
+              pos1.clone(),
+              pos2.clone(),
+            ]);
+            const line = new THREE.Line(geometry, lineMaterial);
+            group.add(line);
+
+            // 🌟 Add glow sphere at the origin
+            // const glow = new THREE.Mesh(
+            //   new THREE.SphereGeometry(0.3, 8, 8),
+            //   new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 0.4 })
+            // );
+            // glow.position.copy(origin);
+            // group.add(glow);
+          }
+        }
+      }
+    };
+
 
     iconTextures.forEach((url, i) => {
       loader.load(url, (texture) => {
