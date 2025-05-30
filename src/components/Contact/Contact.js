@@ -31,6 +31,13 @@ const Contact = () => {
               <a href="mailto:yogesh.saini4002@gmail.com">
                 <i className="fa-solid fa-envelope footer-icon"></i>
               </a>
+              <a
+                href="https://codolio.com/profile/yogesh_1___"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fas fa-user footer-icon"></i>
+              </a>
             </div>
           </div>
         </div>

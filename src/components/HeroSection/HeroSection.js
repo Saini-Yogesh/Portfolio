@@ -59,7 +59,7 @@ const HeroSection = () => {
 
   return (
     <div>
-      <div className="availability-badge">
+      <div className="availability-badge shine-button">
         <div className="ping-dot" />
         <p>Available for new projects</p>
       </div>

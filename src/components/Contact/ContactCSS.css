@@ -73,7 +73,7 @@ body.dark {
 .icon-links {
   display: flex;
   justify-content: center;
-  gap: 2rem; /* Keeps space between icons */
+  gap: 1rem; /* Keeps space between icons */
   align-items: center; /* Centers icons vertically */
 }
 
@@ -136,7 +136,7 @@ body.dark {
 
 /* Shared duration for the loop */
 .footer-icon {
-  animation: sequentialPulse 3s infinite;
+  animation: sequentialPulse 4s infinite;
 }
 
 /* Delay each icon for sequential effect */
@@ -150,4 +150,8 @@ body.dark {
 
 .footer-icon.fa-envelope {
   animation-delay: 2s;
+}
+
+.footer-icon.fa-user {
+  animation-delay: 3s;
 }

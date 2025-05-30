@@ -2,9 +2,11 @@
   position: fixed;
   bottom: 20px;
   left: 20px;
+  width: 40px;
+  height: 40px;
   padding: 10px;
   background-color: transparent;
-  border: solid #0056b3 0.3vmin;
+  border: 2px solid #0056b3;
   color: #0056b3;
   border-radius: 50%;
   cursor: pointer;
@@ -13,12 +15,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
 }
 
 .scroll-to-top-btn:hover {
-  background-color: white;
-  border-radius: 50px;
-  width: auto;
+  background-color: #0056b3;
+  color: white;
+  transform: scale(1.1);
 }

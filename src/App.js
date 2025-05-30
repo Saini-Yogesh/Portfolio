@@ -19,8 +19,8 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading delay (e.g., 2 seconds)
-    const timer = setTimeout(() => setLoading(false), 2000);
+    // Simulate a loading delay (e.g., 1 seconds)
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 

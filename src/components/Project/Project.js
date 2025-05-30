@@ -10,7 +10,7 @@ const Project = () => {
   const projectData = [
     {
       sourceCodeLink: "https://github.com/Saini-Yogesh/WhatsApp-AI-Chatbot",
-      deployedLink: "https://github.com/Saini-Yogesh/WhatsApp-AI-Chatbot",
+      deployedLink: "https://whatsapp-ai-chatbot.vercel.app/",
       name: "WhatsApp AI Chatbot Flow Builder",
       description:
         "The WhatsApp AI Chatbot Flow Builder lets businesses automate chat flows using a drag-and-drop UI. It supports editable questions, dynamic responses, and Twilio integration. Clean UI, easy setup, and smooth automation.",
@@ -59,7 +59,7 @@ const Project = () => {
         <div className="projects-container">
           {projectData.map((project, index) => (
             <Projectitem
-              key={project.id}
+              key={`${project.name}-${index}`}
               index={index}
               name={project.name}
               description={project.description}
