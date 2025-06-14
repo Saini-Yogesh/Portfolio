@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.eed29225.css",
-    "main.js": "/Portfolio/static/js/main.4f3c6c01.js",
+    "main.css": "/Portfolio/static/css/main.d1fd10a0.css",
+    "main.js": "/Portfolio/static/js/main.c72208a9.js",
     "static/js/453.1407b060.chunk.js": "/Portfolio/static/js/453.1407b060.chunk.js",
     "static/media/TripConnect.png": "/Portfolio/static/media/TripConnect.91abd21a463ee95115cc.png",
     "static/media/myPhoto2.jpg": "/Portfolio/static/media/myPhoto2.760d2048aace7f2337ae.jpg",
@@ -11,12 +11,12 @@
     "static/media/logo.png": "/Portfolio/static/media/logo.151453bd2b6a8be77cda.png",
     "index.html": "/Portfolio/index.html",
     "static/media/star.svg": "/Portfolio/static/media/star.bbd7068825eac8b1987e0f2373ea191c.svg",
-    "main.eed29225.css.map": "/Portfolio/static/css/main.eed29225.css.map",
-    "main.4f3c6c01.js.map": "/Portfolio/static/js/main.4f3c6c01.js.map",
+    "main.d1fd10a0.css.map": "/Portfolio/static/css/main.d1fd10a0.css.map",
+    "main.c72208a9.js.map": "/Portfolio/static/js/main.c72208a9.js.map",
     "453.1407b060.chunk.js.map": "/Portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eed29225.css",
-    "static/js/main.4f3c6c01.js"
+    "static/css/main.d1fd10a0.css",
+    "static/js/main.c72208a9.js"
   ]
 }
