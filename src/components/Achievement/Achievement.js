@@ -7,15 +7,15 @@ const Achievement = () => {
     {
       text: (
         <>
-          Achieved a global rank of <span className="highlight">982</span> out of <span className="highlight">34,698</span> participants in LeetCode Biweekly Contest 135.
+          Achieved a global rank of <span className="highlight1">982</span> out of <span className="highlight1">34,698</span> participants in LeetCode Biweekly Contest 135.
         </>
       ),
-      link: "https://leetcode.com/contest/biweekly-contest-135/ranking",
+      link: "https://leetcode.com/contest/biweekly-contest-135/ranking/40/?region=global_v2",
     },
     {
       text: (
         <>
-          Secured <span className="highlight">50<sup>th</sup> place</span> globally in CodeChef Starters 185, among thousands of participants.
+          Secured <span className="highlight1">50<sup>th</sup> place</span> globally in CodeChef Starters 185, among thousands of participants.
         </>
       ),
       link: "https://www.codechef.com/rankings/START185C?itemsPerPage=100&order=asc&page=1&search=yogesh_1_saini&sortBy=rank",
@@ -23,15 +23,15 @@ const Achievement = () => {
     {
       text: (
         <>
-          Solved <span className="highlight">1,500+</span> DSA problems on LeetCode, GFG, Codeforces, and CodeChef.
+          Solved <span className="highlight1">1,500+</span> DSA problems on LeetCode, GFG, Codeforces, and CodeChef.
         </>
       ),
-      link: "/",
+      link: "https://codolio.com/profile/yogesh_1___",
     },
     {
       text: (
         <>
-          LeetCode <span className="highlight">1800+</span> maximum contest rating, top <span className="highlight">7%</span> globally.
+          <span className="highlight2">Knight</span> at LeetCode with a maximum contest rating of <span className="highlight1">1874</span>, ranked in the top <span className="highlight1">5%</span> globally.
         </>
       ),
       link: "https://leetcode.com/u/yogesh_1___/",
@@ -39,7 +39,7 @@ const Achievement = () => {
     {
       text: (
         <>
-          <span className="highlight">3-star</span> on CodeChef with a maximum contest rating of <span className="highlight">1650+</span>.
+          <span className="highlight1">3-star</span> on CodeChef with a maximum contest rating of <span className="highlight1">1660+</span>.
         </>
       ),
       link: "https://www.codechef.com/users/yogesh_1_saini",
@@ -47,7 +47,7 @@ const Achievement = () => {
     {
       text: (
         <>
-          <span className="highlight">Pupil</span> on Codeforces with a maximum rating of <span className="highlight">1370+</span>.
+          <span className="highlight2">Specialist</span> on Codeforces with a maximum rating of <span className="highlight1">1410+</span>.
         </>
       ),
       link: "https://codeforces.com/profile/yogesh_1___",
