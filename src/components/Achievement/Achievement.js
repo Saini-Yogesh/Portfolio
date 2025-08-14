@@ -6,7 +6,7 @@ const achievementsData = [
   {
     text: (
       <>
-        <span className="highlight2">Specialist</span> on Codeforces with a maximum rating of <span className="highlight1">1410+</span>.
+        <span className="highlight2">Specialist</span> on Codeforces with a maximum rating of <span className="highlight1">1435+</span>.
       </>
     ),
     link: "https://codeforces.com/profile/yogesh_1___",
@@ -14,7 +14,7 @@ const achievementsData = [
   {
     text: (
       <>
-        <span className="highlight2">Knight</span> at LeetCode with a maximum contest rating of <span className="highlight1">1874</span>, ranked in the top <span className="highlight1">5%</span> globally.
+        <span className="highlight2">Knight</span> at LeetCode with a maximum contest rating of <span className="highlight1">1891</span>, ranked in the top <span className="highlight1">5%</span> globally.
       </>
     ),
     link: "https://leetcode.com/u/yogesh_1___/",
