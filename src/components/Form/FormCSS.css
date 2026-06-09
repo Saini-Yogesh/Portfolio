@@ -1,108 +1,207 @@
-:root {
-  --cf-form-bg-color: #ffffff; /* Light background for form */
-  --cf-input-border-color: #d1d5db; /* Light gray border for inputs */
-  --cf-input-focus-color: #007bff; /* Blue focus border color */
-  --cf-input-text-color: #151515; /* Black text color for light theme */
-  --cf-button-bg-color: #007bff; /* Blue background for button */
-  --cf-button-text-color: #ffffff; /* White text color for button */
-  --cf-button-hover-bg-color: #0056b3; /* Darker blue on hover */
-  --cf-placeholder-color: #151515; /* Light gray placeholder text */
-}
-
-body.dark {
-  --cf-form-bg-color: #333; /* Darker background for dark mode */
-  --cf-input-border-color: #666;
-  --cf-input-focus-color: #00ffff;
-  --cf-input-text-color: #fff; /* White text color for dark theme */
-  --cf-button-bg-color: #4e90ff;
-  --cf-button-text-color: #fff;
-  --cf-button-hover-bg-color: #006cbd;
-  --cf-placeholder-color: #ccc;
-}
-
 .contact-form {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: var(--cf-form-bg-color); /* Form background color */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Added shadow */
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 2.25rem;
+  background-color: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--card-hover-shadow);
 }
 
 .contact-form h1 {
   text-align: center;
-  margin-bottom: 40px;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1.75rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.contact-form h1 i {
+  color: var(--primary);
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .row {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .row .form-group {
   flex: 1;
+  min-width: 250px;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-group {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.floating-group input,
+.floating-group textarea {
   width: 100%;
-  padding: 12px 0;
-  background-color: var(--cf-form-bg-color); /* Background color */
+  padding: 1.5rem 0.5rem 0.5rem;
+  background-color: transparent;
   border: none;
-  border-bottom: 2px dotted var(--cf-input-border-color); /* Input border color */
+  border-bottom: 1.5px solid var(--card-border);
   outline: none;
-  color: var(--cf-input-text-color); /* Text color for input fields */
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color 0.3s ease;
 }
 
-.row .form-group:not(:first-child) {
-  padding-left: 16px;
-  margin-left: 8px;
+.floating-group label {
+  position: absolute;
+  left: 0.5rem;
+  top: 1.25rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-bottom: 2px dotted var(--cf-input-focus-color); /* Focused input border */
+.floating-group input:focus ~ label,
+.floating-group input:not(:placeholder-shown) ~ label,
+.floating-group textarea:focus ~ label,
+.floating-group textarea:not(:placeholder-shown) ~ label {
+  top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.floating-group input:focus,
+.floating-group textarea:focus {
+  border-bottom-color: var(--primary);
+}
+
+.input-focus-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.floating-group input:focus ~ .input-focus-line,
+.floating-group textarea:focus ~ .input-focus-line {
+  width: 100%;
+}
+
+.floating-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.status-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.status-message.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.status-message.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.status-message i {
+  font-size: 1.1rem;
 }
 
 button {
-  align-self: start;
-  padding: 12px 12px;
-  background-color: var(--cf-button-bg-color); /* Button background */
-  color: var(--cf-button-text-color); /* Button text color */
-  border: none;
-  border-radius: 24px;
+  align-self: flex-start;
+  padding: 0.8rem 2.5rem !important;
+  background: var(--gradient-primary) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
+  box-shadow: 0 4px 12px var(--primary-glow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 button:hover {
-  background-color: var(
-    --cf-button-hover-bg-color
-  ); /* Button hover background */
+  background: var(--gradient-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--primary-glow);
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: var(--cf-placeholder-color); /* Placeholder color */
-  font-weight: bold;
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .contact-form {
-    margin: auto 2rem;
+    margin: 40px 1.5rem;
+    padding: 2rem;
   }
+
+  .contact-form h1 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
   .row {
     flex-direction: column;
+    gap: 1.5rem;
   }
-  .row .form-group:not(:first-child) {
-    padding-left: 0px;
-    margin-left: 0px;
+
+  .row .form-group {
+    min-width: 100%;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
   }
 }

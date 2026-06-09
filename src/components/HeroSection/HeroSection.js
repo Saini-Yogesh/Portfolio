@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./HeroSectionCSS.css";
 
 import { motion } from "framer-motion";
-import TechGlobe from "../TechGlobe/TechGlobe"
+import TechGlobe from "../TechGlobe/TechGlobe";
 
 // Typing effect component
 const TypingEffect = ({ text, speed, loop }) => {
@@ -48,7 +48,7 @@ const HeroSection = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     const heroSection = document.querySelector(".hero-section");
@@ -59,56 +59,61 @@ const HeroSection = () => {
 
   return (
     <div>
-      <div className="availability-badge shine-button">
-        <div className="ping-dot" />
-        <p>Available for new projects</p>
-      </div>
       <div className="hero-section">
-        <div className="hero-content">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-            transition={{ duration: 1, type: "spring", stiffness: 100 }}
-          >
-            <TypingEffect text="Hi, I'm Yogesh Saini." speed={200} loop={true} />
-          </motion.h1>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-            transition={{ duration: 1.2, type: "spring", stiffness: 100 }}
-          >
-            I build things for the WEB
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isInView ? 1 : 0 }}
-            transition={{ duration: 1.5 }}
-          >
-            Discover the bespoke solutions and projects delivered.
-          </motion.p>
-
-          <motion.div
-            className="hero-buttons"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isInView ? 1 : 0 }}
-            transition={{ duration: 1.7 }}
-          >
-            <a
-              href="https://drive.google.com/file/d/1tpiFRzakAj6X9M1Sq2YM9Y00ynnKQVIv/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="join-button shine-button"
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="availability-badge shine-button">
+              <div className="ping-dot" />
+              <span>Open to Full-Time Roles</span>
+            </div>
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
+              transition={{ duration: 1, type: "spring", stiffness: 100 }}
             >
-              My Resume
-            </a>
-            <a href="mailto:yogesh.saini4002@gmail.com" className="contact-link shine-button">
-              Mail Me
-            </a>
-          </motion.div>
+              <TypingEffect text="Hi, I'm Yogesh." speed={200} loop={true} />
+            </motion.h1>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
+              transition={{ duration: 1.2, type: "spring", stiffness: 100 }}
+            >
+              I build things for the WEB
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isInView ? 1 : 0 }}
+              transition={{ duration: 1.5 }}
+            >
+              Discover the bespoke solutions and projects delivered.
+            </motion.p>
+
+            <motion.div
+              className="hero-buttons"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isInView ? 1 : 0 }}
+              transition={{ duration: 1.7 }}
+            >
+              <a
+                href="https://drive.google.com/file/d/1tpiFRzakAj6X9M1Sq2YM9Y00ynnKQVIv/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="join-button shine-button"
+              >
+                My Resume
+              </a>
+              <a
+                href="mailto:yogesh.saini4002@gmail.com"
+                className="contact-link shine-button"
+              >
+                Mail Me
+              </a>
+            </motion.div>
+          </div>
+          <TechGlobe />
         </div>
-        <TechGlobe />
         {/* <motion.div
           className="hero-image"
           initial={{ opacity: 0, scale: 0.4 }}

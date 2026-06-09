@@ -63,20 +63,25 @@ const Navbar = () => {
           <img src={Logo} alt="Logo" className="logo-img" />
         </a>
         <div className="navbar-right">
-          <div className={`navbar-center ${menuOpen ? "active" : ""}`} ref={menuRef}>
+          <div
+            className={`navbar-center ${menuOpen ? "active" : ""}`}
+            ref={menuRef}
+          >
             {links.map((link, index) => (
               <motion.a
                 key={index}
                 href={link.href}
                 onClick={() => handleLinkClick(link.href)}
                 whileHover={{
-                  scale: 1.1,
-                  color: "#0dcaf0",
-                  textShadow: "0 0 8px rgba(13, 202, 240, 0.8)",
+                  scale: 1.05,
+                  color: "var(--primary)",
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`nav-link-animated ${currentSection === link.href.replace("#", "") ? "active-link" : ""
-                  }`}
+                className={`nav-link-animated ${
+                  currentSection === link.href.replace("#", "")
+                    ? "active-link"
+                    : ""
+                }`}
               >
                 {link.label}
               </motion.a>
@@ -99,9 +104,15 @@ const Navbar = () => {
             </motion.div>
 
             {menuOpen ? (
-              <AiOutlineClose className="navbar-menu-icon" onClick={handleMenuToggle} />
+              <AiOutlineClose
+                className="navbar-menu-icon"
+                onClick={handleMenuToggle}
+              />
             ) : (
-              <GiHamburgerMenu className="navbar-menu-icon" onClick={handleMenuToggle} />
+              <GiHamburgerMenu
+                className="navbar-menu-icon"
+                onClick={handleMenuToggle}
+              />
             )}
           </div>
         </div>

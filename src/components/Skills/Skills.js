@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./SkillsCSS.css"; // Make sure CSS uses --skills-* variables
 
 const skills = {
-  "Languages": [
+  Languages: [
     { name: "C++", icon: "C++", color: "#004482", textColor: "#fff" },
     { name: "Python", icon: "Py", color: "#3776AB", textColor: "#fff" },
     { name: "JavaScript", icon: "JS", color: "#f7df1e", textColor: "#000" },
@@ -11,13 +11,13 @@ const skills = {
     { name: "HTML", icon: "HTML", color: "#e34f26", textColor: "#fff" },
     { name: "CSS", icon: "CSS", color: "#1572b6", textColor: "#fff" },
   ],
-  "Frontend": [
+  Frontend: [
     { name: "React.js", icon: "⚛️", color: "#61dafb", textColor: "#000" },
     { name: "Next.js", icon: "Next", color: "#000", textColor: "#fff" },
     { name: "Tailwind CSS", icon: "TW", color: "#38b2ac", textColor: "#fff" },
     { name: "Bootstrap", icon: "B", color: "#563d7c", textColor: "#fff" },
   ],
-  "Backend": [
+  Backend: [
     { name: "Node.js", icon: "Node", color: "#3c873a", textColor: "#fff" },
     { name: "Express.js", icon: "Ex", color: "#444", textColor: "#fff" },
     { name: "Mongoose", icon: "MG", color: "#800000", textColor: "#fff" },
@@ -28,15 +28,25 @@ const skills = {
     { name: "Apache Airflow", icon: "💨", color: "#017A8A", textColor: "#fff" },
     { name: "ETL Pipelines", icon: "⚙️", color: "#2980b9", textColor: "#fff" },
     { name: "Delta Lake", icon: "🌊", color: "#008080", textColor: "#fff" },
-    { name: "Data Quality Monitoring", icon: "📊", color: "#27ae60", textColor: "#fff" },
+    {
+      name: "Data Quality Monitoring",
+      icon: "📊",
+      color: "#27ae60",
+      textColor: "#fff",
+    },
   ],
   "Cloud & Platforms": [
     { name: "AWS S3", icon: "S3", color: "#FF9900", textColor: "#000" },
-    { name: "Amazon WorkSpaces", icon: "AWS", color: "#232F3E", textColor: "#fff" },
+    {
+      name: "Amazon WorkSpaces",
+      icon: "AWS",
+      color: "#232F3E",
+      textColor: "#fff",
+    },
     { name: "Vercel", icon: "▲", color: "#000000", textColor: "#fff" },
     { name: "Netlify", icon: "◈", color: "#00C7B7", textColor: "#fff" },
   ],
-  "Databases": [
+  Databases: [
     { name: "MongoDB", icon: "🍃", color: "#13aa52", textColor: "#fff" },
     { name: "MySQL", icon: "🐬", color: "#4479A1", textColor: "#fff" },
   ],
@@ -55,8 +65,18 @@ const skills = {
     { name: "ngrok", icon: "🌐", color: "#1F1F1F", textColor: "#fff" },
   ],
   "Soft Skills": [
-    { name: "Problem Solving", icon: "🧩", color: "#2980b9", textColor: "#fff" },
-    { name: "Team Collaboration", icon: "🤝", color: "#27ae60", textColor: "#fff" },
+    {
+      name: "Problem Solving",
+      icon: "🧩",
+      color: "#2980b9",
+      textColor: "#fff",
+    },
+    {
+      name: "Team Collaboration",
+      icon: "🤝",
+      color: "#27ae60",
+      textColor: "#fff",
+    },
     { name: "Communication", icon: "💬", color: "#8e44ad", textColor: "#fff" },
     { name: "Leadership", icon: "🧭", color: "#c0392b", textColor: "#fff" },
   ],
@@ -67,13 +87,12 @@ const itemVariants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 100 }
+    transition: { type: "spring", stiffness: 100 },
   },
   hover: {
-    y: -10,
-    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.5)",
-    transition: { type: "spring", stiffness: 400, damping: 10 }
-  }
+    y: -6,
+    transition: { type: "spring", stiffness: 400, damping: 15 },
+  },
 };
 
 export default function SkillGrid() {
@@ -110,7 +129,7 @@ export default function SkillGrid() {
                       className="skill-icon"
                       style={{
                         backgroundColor: skill.color,
-                        color: skill.textColor
+                        color: skill.textColor,
                       }}
                     >
                       {skill.icon}

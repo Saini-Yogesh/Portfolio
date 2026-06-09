@@ -10,7 +10,7 @@ import Skills from "./components/Skills/Skills";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import CodingProfilesSection from "./components/CodingProfiles/CodingProfiles";
 import Experience from "./components/Experience/Experience";
-import Form from "./components/Form/Form"
+import Form from "./components/Form/Form";
 import TapeSection from "./components/Tape/TapeSection";
 import BackgroundParticles from "./components/BackgroundEffect/BackgroundParticles";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
@@ -19,8 +19,8 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading delay (e.g., 1 seconds)
-    const timer = setTimeout(() => setLoading(false), 1000);
+    // Simulate a loading delay (2 seconds for full animation sequence)
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 

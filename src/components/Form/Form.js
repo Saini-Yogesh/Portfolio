@@ -12,6 +12,8 @@ const Form = () => {
   });
 
   const [buttonBlock, setButtonBlock] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +26,7 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonBlock(true);
+    setStatus(null);
 
     try {
       // eslint-disable-next-line
@@ -31,19 +34,25 @@ const Form = () => {
         "service_lwd4z2k",
         "template_9s610sh",
         formData,
-        "yhe7iUd8gmUgVzmh6"
+        "yhe7iUd8gmUgVzmh6",
       );
-      // console.log(result.text);
-      alert("Message sent successfully!");
+      setStatus("success");
+      setStatusMessage("Message sent successfully! I'll get back to you soon.");
       setFormData({
         user_name: "",
         user_email: "",
         subject: "",
         message: "",
       });
+      setTimeout(() => {
+        setStatus(null);
+      }, 6000);
     } catch (error) {
-      console.error(error.text);
-      alert("Failed to send the message, please try again.");
+      console.error(error);
+      setStatus("error");
+      setStatusMessage(
+        "Failed to send the message. Please try again or email me directly.",
+      );
     } finally {
       setButtonBlock(false);
     }
@@ -89,52 +98,83 @@ const Form = () => {
           },
         }}
       >
+        {status && (
+          <motion.div
+            className={`status-message ${status}`}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {status === "success" ? (
+              <i className="fa-solid fa-circle-check"></i>
+            ) : (
+              <i className="fa-solid fa-circle-xmark"></i>
+            )}
+            <span>{statusMessage}</span>
+          </motion.div>
+        )}
+
         <motion.div className="row" variants={fieldAnim}>
-          <motion.div className="form-group" variants={fieldAnim}>
+          <motion.div
+            className="form-group floating-group"
+            variants={fieldAnim}
+          >
             <input
               type="text"
               id="user_name"
               name="user_name"
               value={formData.user_name}
               onChange={handleChange}
-              placeholder="Name"
+              placeholder=" "
               required
             />
+            <label htmlFor="user_name">Name</label>
+            <span className="input-focus-line"></span>
           </motion.div>
-          <motion.div className="form-group" variants={fieldAnim}>
+          <motion.div
+            className="form-group floating-group"
+            variants={fieldAnim}
+          >
             <input
               type="email"
               id="user_email"
               name="user_email"
               value={formData.user_email}
               onChange={handleChange}
-              placeholder="Email"
+              placeholder=" "
               required
             />
+            <label htmlFor="user_email">Email</label>
+            <span className="input-focus-line"></span>
           </motion.div>
         </motion.div>
 
-        <motion.div className="form-group" variants={fieldAnim}>
+        <motion.div className="form-group floating-group" variants={fieldAnim}>
           <input
             type="text"
             id="subject"
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            placeholder="Subject"
+            placeholder=" "
           />
+          <label htmlFor="subject">Subject</label>
+          <span className="input-focus-line"></span>
         </motion.div>
 
-        <motion.div className="form-group" variants={fieldAnim}>
+        <motion.div className="form-group floating-group" variants={fieldAnim}>
           <textarea
             id="message"
             name="message"
-            rows="5"
+            rows="3"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Message..."
+            placeholder=" "
             required
           ></textarea>
+          <label htmlFor="message">Message...</label>
+          <span className="input-focus-line"></span>
         </motion.div>
 
         <motion.button
@@ -151,7 +191,10 @@ const Form = () => {
         >
           {buttonBlock ? (
             <>
-              <i className="fa fa-spinner fa-spin" style={{ marginRight: "8px" }}></i>
+              <i
+                className="fa fa-spinner fa-spin"
+                style={{ marginRight: "8px" }}
+              ></i>
               Sending...
             </>
           ) : (

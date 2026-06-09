@@ -1,26 +1,28 @@
 .scroll-to-top-btn {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
+  bottom: 30px;
+  right: 30px; /* Standard user-friendly bottom-right alignment */
+  width: 44px;
+  height: 44px;
   padding: 10px;
-  background-color: transparent;
-  border: 2px solid #0056b3;
-  color: #0056b3;
+  background-color: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  color: var(--text-primary);
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.1rem;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-to-top-btn:hover {
-  background-color: #0056b3;
+  background: var(--gradient-primary);
   color: white;
-  transform: scale(1.1);
+  border-color: transparent;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 20px var(--primary-glow);
 }

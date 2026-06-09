@@ -116,10 +116,10 @@ const SkillTagCloud = () => {
         canvas.width = 128;
         canvas.height = 128;
         const ctx = canvas.getContext("2d");
-        
+
         ctx.clearRect(0, 0, 128, 128);
         ctx.drawImage(img, 0, 0, 128, 128);
-        
+
         const texture = new THREE.CanvasTexture(canvas);
         texture.magFilter = THREE.NearestFilter;
         texture.minFilter = THREE.NearestFilter;
@@ -129,8 +129,8 @@ const SkillTagCloud = () => {
           new THREE.SpriteMaterial({
             map: texture,
             transparent: true,
-            depthTest: true
-          })
+            depthTest: true,
+          }),
         );
         sprite.scale.set(size, size, 1);
         sprite.position.copy(points[i]);

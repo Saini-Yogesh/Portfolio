@@ -18,7 +18,7 @@ const educationData = [
   {
     institute: "Modern Children Sr Sec School",
     location: "Neem Ka Thana, Sikar, India",
-    degree: "12th Grade",
+    degree: "12th in Science and Maths",
     year: "Intermediate – 95.20%, May 2021",
   },
   {
@@ -37,10 +37,8 @@ const itemVariants = {
     transition: { type: "spring", stiffness: 100 },
   },
   hover: {
-    y: -10,
-    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.5)",
-    transition: { type: "spring", stiffness: 400, damping: 10 },
-    borderRadius: "0px",
+    y: -6,
+    transition: { type: "spring", stiffness: 400, damping: 15 },
   },
 };
 

@@ -1,63 +1,104 @@
-:root {
-  --about-heading-color: #333c4d;
-  --about-paragraph-color: #4a4a4a;
-  --about-image-bg: transparent;
-}
-
-body.dark {
-  --about-heading-color: white;
-  --about-paragraph-color: #ccc;
-  --about-image-bg: transparent;
-}
-
 .about-section {
+  padding: 80px var(--section-padding);
+  min-height: 60vh;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  padding: 4rem 2rem 2rem 2rem;
-  min-height: 50vh;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 4rem;
 }
 
 .about-content {
-  max-width: 40%;
+  max-width: 50%;
 }
 
 .about-content h1 {
-  font-size: 3rem;
-  padding: 1rem 0 1rem 0;
-  color: var(--about-heading-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-content h1 i {
+  color: var(--primary);
 }
 
 .about-content p {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: var(--about-paragraph-color);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
 .about-image {
-  max-width: 30%;
-  transition: transform 0.3s ease;
+  position: relative;
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Offset gradient ring backdrop */
+.about-image::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  z-index: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-image:hover::before {
+  transform: translate(-6px, -6px);
 }
 
 .about-image img {
+  position: relative;
   width: 100%;
   border-radius: 50%;
-  background-size: contain;
-  background-color: var(--about-image-bg);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 4px solid var(--bg-primary);
+  box-shadow: var(--card-shadow);
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-@media (max-width: 930px) {
-  .about-section {
+.about-image:hover img {
+  transform: scale(1.02) !important;
+}
+
+@media (max-width: 992px) {
+  .about-container {
     flex-direction: column;
     text-align: center;
+    gap: 3rem;
   }
 
   .about-content {
     max-width: 100%;
   }
 
+  .about-content h1 {
+    justify-content: center;
+  }
+
   .about-image {
-    max-width: 70%;
-    margin-top: 2rem;
+    max-width: 240px;
+    margin-top: 1rem;
   }
 }

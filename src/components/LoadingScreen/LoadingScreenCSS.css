@@ -1,30 +1,131 @@
-:root {
-  /* Light theme */
-  --loading-bg-color: #ffffff;
-  --loading-logo-shadow: rgba(0, 0, 0, 0.5);
-}
-
-body.dark {
-  /* Dark theme */
-  --loading-bg-color: #151515;
-  --loading-logo-shadow: rgba(13, 202, 240, 0.8);
-}
-
+/* ===== Loading Screen ===== */
 .loading-container {
   position: fixed;
   inset: 0;
-  background-color: var(--loading-bg-color);
+  background-color: var(--bg-primary);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  overflow: hidden;
 }
 
-.loading-logo {
-  height: 60px;
-  width: 60px;
+/* Ambient background glow orbs */
+.loading-orb {
+  position: absolute;
   border-radius: 50%;
-  object-fit: cover;
-  cursor: pointer;
-  box-shadow: 0 2px 10px var(--loading-logo-shadow);
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+.loading-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #4f46e5, #7c3aed);
+  top: -100px;
+  left: -100px;
+  animation: orb-float 6s ease-in-out infinite alternate;
+}
+
+.loading-orb-2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #0d9488, #22d3ee);
+  bottom: -80px;
+  right: -80px;
+  animation: orb-float 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes orb-float {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(30px, 20px) scale(1.08);
+  }
+}
+
+/* Center content stack */
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 1;
+}
+
+/* Initials circle */
+.loading-initials-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: ring-spin 3s linear infinite;
+}
+
+@keyframes ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-initials {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  user-select: none;
+}
+
+/* Name */
+.loading-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+/* Tagline */
+.loading-tagline {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Progress bar */
+.loading-progress-track {
+  width: 200px;
+  height: 3px;
+  background: var(--card-border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.loading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed, #0d9488);
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
 }

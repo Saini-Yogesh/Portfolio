@@ -1,52 +1,161 @@
-/* Base styles for both themes */
+/* Base styles & resets */
 * {
   margin: 0;
-  padding: 0px;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
+/* Design System Tokens */
+:root {
+  /* Light Theme */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --primary: #4f46e5; /* Indigo */
+  --primary-hover: #4338ca;
+  --primary-glow: rgba(79, 70, 229, 0.15);
+
+  --accent: #0d9488; /* Teal */
+  --accent-hover: #0f766e;
+  --accent-glow: rgba(13, 148, 136, 0.15);
+
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --card-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --card-hover-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #4f46e5 0%,
+    #7c3aed 50%,
+    #0d9488 100%
+  );
+  --gradient-hover: linear-gradient(
+    135deg,
+    #4338ca 0%,
+    #6d28d9 50%,
+    #0f766e 100%
+  );
+  --gradient-text: linear-gradient(135deg, #4f46e5 0%, #0d9488 100%);
+
+  --btn-shine-text-color: #4f46e5;
+  --btn-shine-glow: rgba(79, 70, 229, 0.15);
+  --section-padding: 8rem;
+}
+
+body.dark {
+  /* Dark Theme */
+  --bg-primary: #030712; /* Sleek midnight/slate black */
+  --bg-secondary: #0b0f19;
+  --bg-tertiary: #1f2937;
+
+  --text-primary: #f9fafb;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --primary: #8b5cf6; /* Violet */
+  --primary-hover: #a78bfa;
+  --primary-glow: rgba(139, 92, 246, 0.35);
+
+  --accent: #22d3ee; /* Cyan */
+  --accent-hover: #67e8f9;
+  --accent-glow: rgba(34, 211, 238, 0.3);
+
+  --card-bg: rgba(11, 15, 25, 0.65);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --card-hover-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #6366f1 0%,
+    #8b5cf6 50%,
+    #22d3ee 100%
+  );
+  --gradient-hover: linear-gradient(
+    135deg,
+    #4f46e5 0%,
+    #7c3aed 50%,
+    #06b6d4 100%
+  );
+  --gradient-text: linear-gradient(
+    135deg,
+    #a5b4fc 0%,
+    #818cf8 40%,
+    #22d3ee 100%
+  );
+
+  --btn-shine-text-color: #a78bfa;
+  --btn-shine-glow: rgba(167, 139, 250, 0.25);
+}
+
+/* Base Body Style */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
     sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+  overflow-x: hidden;
 }
 
-/* Light theme overrides */
-:root {
-  --bg-color: #abd1f7; /* Light blue-gray */
-  --text-color: #333c4d; /* Dark blue-gray */
-  --accent-color: #0066cc; /* Blue */
-  --link-hover-color: #005bb5; /* Darker blue for hover */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
-/* Dark theme overrides */
-body.dark {
-  --bg-color: #151515; /* Dark background */
-  --text-color: white; /* White text */
-  --accent-color: #0dcaf0; /* Light cyan for accents */
-  --link-hover-color: #005bb5; /* Darker blue for hover */
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 999px;
+  border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
 
-/* Apply CSS variables throughout the app */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-:root {
-  --btn-shine-text-color: #007bff; /* Text color for light mode */
-  --btn-shine-glow: rgba(0, 123, 255, 0.2); /* Shine color for light mode */
+/* Custom text selection */
+::selection {
+  background-color: var(--primary-glow);
+  color: var(--text-primary);
 }
 
-body.dark {
-  --btn-shine-text-color: #4e90ff; /* Text color for dark mode */
-  --btn-shine-glow: rgba(78, 144, 255, 0.2); /* Shine color for dark mode */
-}
-
+/* Glow effects & micro-interactions */
 .shine-button {
   position: relative;
   overflow: hidden;
@@ -57,7 +166,10 @@ body.dark {
   border-radius: 8px;
   cursor: pointer;
   z-index: 0;
-  transition: color 0.3s, border-color 0.3s;
+  transition:
+    color 0.3s,
+    border-color 0.3s,
+    transform 0.2s ease;
   background: transparent;
 }
 
@@ -66,7 +178,7 @@ body.dark {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 30%; /* thinner */
+  width: 30%;
   height: 100%;
   background: linear-gradient(
     120deg,
@@ -75,7 +187,7 @@ body.dark {
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-20deg);
-  animation: shine 2s linear infinite;
+  animation: shine 2.5s linear infinite;
   pointer-events: none;
   z-index: 1;
   will-change: left;
@@ -87,5 +199,17 @@ body.dark {
   }
   100% {
     left: 130%;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --section-padding: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 1.5rem;
   }
 }

@@ -1,9 +1,11 @@
 .iconssphear-section {
-  margin: 20px 10px;
+  margin: 0;
   font-family: monospace;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.9s ease-out, transform 0.2s ease-out;
+  transition:
+    opacity 0.9s ease-out,
+    transform 0.2s ease-out;
 }
 
 .iconssphear-section h3 {
@@ -14,12 +16,18 @@
 .iconssphear-tag-cloud {
   height: 375px;
   width: 375px;
-  margin: 0 auto;
+  margin: 0 0 0 auto; /* Align to the right edge of container */
 }
 
 .fade-in {
-  opacity: 8 !important;
+  opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+@media screen and (max-width: 992px) {
+  .iconssphear-tag-cloud {
+    margin: 0 auto; /* Center it when stacked vertically */
+  }
 }
 
 @media screen and (max-width: 804px) {
@@ -28,4 +36,3 @@
     max-width: 375px;
   }
 }
-

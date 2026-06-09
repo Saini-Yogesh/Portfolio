@@ -6,7 +6,7 @@ const achievementsData = [
   {
     text: (
       <>
-        <span className="highlight2">Specialist</span> on Codeforces with a maximum rating of <span className="highlight1">1435+</span>.
+        <span className="highlight2">Specialist</span> on Codeforces with a maximum rating of <span className="highlight1">1470</span>.
       </>
     ),
     link: "https://codeforces.com/profile/yogesh_1___",
@@ -46,7 +46,7 @@ const achievementsData = [
   {
     text: (
       <>
-        Solved <span className="highlight1">1,500+</span> DSA problems on LeetCode, GFG, Codeforces, and CodeChef.
+        Solved <span className="highlight1">2,000+</span> DSA problems on LeetCode, GFG, Codeforces, and CodeChef.
       </>
     ),
     link: "https://codolio.com/profile/yogesh_1___",

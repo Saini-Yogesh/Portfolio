@@ -1,17 +1,31 @@
 .projects-section {
-  padding: 60px 2rem 2rem 2rem;
+  padding: 80px 8rem 0;
 }
 
 .projects-section h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.projects-section h2 i {
+  color: var(--primary);
 }
 
 .projects-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .projects-section {
+    padding: 4rem 2rem 0;
+  }
 }

@@ -2,7 +2,16 @@ import { motion } from "framer-motion";
 import "./ProjectItemCSS.css";
 
 const Projectitem = (props) => {
-  const { sourceCodeLink, deployedLink, name, description, languages, image, index, projectType } = props;
+  const {
+    sourceCodeLink,
+    deployedLink,
+    name,
+    description,
+    languages,
+    image,
+    index,
+    projectType,
+  } = props;
   const isImageLeft = index % 2 !== 0;
 
   return (
@@ -18,7 +27,7 @@ const Projectitem = (props) => {
     >
       <div className="project-content">
         <div className="project-details">
-          <p style={{ color: "#ff0050" }}>— {projectType}</p>
+          <p className="project-subtitle">— {projectType}</p>
           <h3 className="project-title">{name}</h3>
           <p>{description}</p>
           <div className="tech-tags">
@@ -34,26 +43,28 @@ const Projectitem = (props) => {
               </motion.span>
             ))}
           </div>
-          <motion.a
-            href={sourceCodeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn shine-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            GitHub ↗
-          </motion.a>
-          <motion.a
-            href={deployedLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn shine-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Live Demo ↗
-          </motion.a>
+          <div className="project-buttons">
+            <motion.a
+              href={sourceCodeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn shine-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              GitHub ↗
+            </motion.a>
+            <motion.a
+              href={deployedLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn shine-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Live Demo ↗
+            </motion.a>
+          </div>
         </div>
         <div className="project-image">
           <div className="image-wrapper">

@@ -1,12 +1,22 @@
 .coding-profiles-section {
-  padding: 60px 10% 3rem 10%;
+  padding: 80px 8rem;
   text-align: center;
 }
 
 .coding-profiles-section h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 3rem;
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.coding-profiles-section h2 i {
+  color: var(--primary);
 }
 
 .coding-profiles-container {
@@ -14,28 +24,54 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 5vmin;
-  margin-top: 5rem;
-  user-select: none;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .coding-profile-link {
   text-decoration: none;
-  color: inherit;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .coding-profile-icon {
-  border-radius: 50%;
-  width: 20vmin;
-  height: 20vmin;
-  object-fit: cover;
+  border-radius: 16px; /* Elegant squircle shapes */
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0.75rem;
+}
+
+.coding-profile-link:hover {
+  transform: translateY(-6px);
 }
 
 .coding-profile-link:hover .coding-profile-icon {
-  transform: scale(1.05);
+  border-color: var(--primary);
+  box-shadow: 0 12px 24px var(--primary-glow);
+}
+
+@media (max-width: 992px) {
+  .coding-profiles-section {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coding-profiles-container {
+    gap: 1.5rem;
+  }
+
+  .coding-profile-icon {
+    width: 75px;
+    height: 75px;
+    padding: 0.5rem;
+  }
 }

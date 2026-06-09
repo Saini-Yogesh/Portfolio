@@ -6,9 +6,9 @@ const Contact = () => {
     <>
       <div id="Contact" className="footer">
         <div className="footer-content">
-          <div className="footer-ribbon">
-            <div className="ribbon-top">YOGESH SAINI</div>
-            <div className="ribbon-bottom">A FULL-STACK DEVELOPER</div>
+          <div className="footer-brand">
+            <div className="brand-logo">YOGESH SAINI</div>
+            <div className="brand-subtitle">Full-Stack Developer</div>
           </div>
 
           <div className="footer-icons">
@@ -43,7 +43,7 @@ const Contact = () => {
         </div>
         <div className="footer-border">
           <p className="footer-text">
-            2024 ❤️ © Designed and built by Yogesh Saini.
+            {new Date().getFullYear()} ❤️ © Designed and built by Yogesh Saini.
           </p>
         </div>
       </div>
