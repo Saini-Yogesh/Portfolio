@@ -27,7 +27,6 @@ const iconTextures = [
   "/images/techGlobeIcons/bootstrap-original.svg",
   "/images/techGlobeIcons/typescript-original.svg",
   "/images/techGlobeIcons/vercel-original-wordmark.svg",
-  // "/images/techGlobeIcons/railway-original-wordmark.svg",
   "/images/techGlobeIcons/d3js-original.svg",
 ];
 
@@ -43,7 +42,6 @@ const SkillTagCloud = () => {
     canvas.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
-    const loader = new THREE.TextureLoader();
     const sprites = [];
     const radius = 27;
     const size = 6;
@@ -104,15 +102,37 @@ const SkillTagCloud = () => {
     };
 
     iconTextures.forEach((url, i) => {
-      loader.load(url, (texture) => {
+      const loadPath = url.startsWith("http")
+        ? url
+        : (process.env.PUBLIC_URL || "") + url;
+
+      const img = new Image(128, 128);
+      if (loadPath.startsWith("http")) {
+        img.crossOrigin = "anonymous";
+      }
+
+      const handleImageLoaded = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 128;
+        canvas.height = 128;
+        const ctx = canvas.getContext("2d");
+        
+        ctx.clearRect(0, 0, 128, 128);
+        ctx.drawImage(img, 0, 0, 128, 128);
+        
+        const texture = new THREE.CanvasTexture(canvas);
         texture.magFilter = THREE.NearestFilter;
         texture.minFilter = THREE.NearestFilter;
+        texture.needsUpdate = true;
 
         const sprite = new THREE.Sprite(
-          new THREE.SpriteMaterial({ map: texture }),
+          new THREE.SpriteMaterial({
+            map: texture,
+            transparent: true,
+            depthTest: true
+          })
         );
-        const aspect = texture.image.width / texture.image.height;
-        sprite.scale.set(size * aspect, size, 1);
+        sprite.scale.set(size, size, 1);
         sprite.position.copy(points[i]);
 
         group.add(sprite);
@@ -122,7 +142,19 @@ const SkillTagCloud = () => {
         if (loadedCount === iconTextures.length) {
           connectIconsWithLines();
         }
-      });
+      };
+
+      img.onload = handleImageLoaded;
+
+      img.onerror = (err) => {
+        console.error("Error loading SVG:", loadPath, err);
+        loadedCount++;
+        if (loadedCount === iconTextures.length) {
+          connectIconsWithLines();
+        }
+      };
+
+      img.src = loadPath;
     });
 
     scene.add(group);
