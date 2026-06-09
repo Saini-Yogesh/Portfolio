@@ -1,10 +1,10 @@
 import React from "react";
 import "./ProjectCSS.css";
 import Projectitem from "./Projectitem";
-import SGT from "../../images/projectImages/SGT.png";
-import eCommerceStore from "../../images/projectImages/E-commerce-store.png";
-import TripConnect from "../../images/projectImages/TripConnect.png";
-import FlowBuilder from "../../images/projectImages/Flow-Builder.png";
+const SGT = (process.env.PUBLIC_URL || "") + "/images/projectImages/SGT.png";
+const eCommerceStore = (process.env.PUBLIC_URL || "") + "/images/projectImages/E-commerce-store.png";
+const TripConnect = (process.env.PUBLIC_URL || "") + "/images/projectImages/TripConnect.png";
+const FlowBuilder = (process.env.PUBLIC_URL || "") + "/images/projectImages/Flow-Builder.png";
 
 const Project = () => {
   const projectData = [

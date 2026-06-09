@@ -5,18 +5,32 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const experiences = [
     {
-      role: "🧑‍💻 Technical Member",
-      organization: "Algorithmic and Programming Society, NIT Rourkela",
-      duration: "Nov 2022 - Present",
+      role: "📊 Data Engineering Intern",
+      organization: "Vivriti Capital Pvt. Ltd",
+      duration: "Jan 2026 – Present",
       details:
-        "As a dedicated member of the Algorithmic and Programming Society at NIT Rourkela, I have embraced the opportunity to contribute to the professional and technical development of students. My role involves mentoring and coaching a group of aspiring programmers, guiding their progress, and ensuring they remain focused on their goals. Additionally, I am an integral part of the core event management team, where I collaborate to organize events and workshops that enhance learning, foster collaboration, and inspire innovation among students. This experience has been deeply fulfilling, allowing me to blend my technical expertise with leadership skills while making a meaningful impact on the academic and professional journeys of my peers.",
+        "Developed and optimized data pipelines for co-lending and NBFC loan datasets using SQL, PySpark, and Databricks. Engineered automated DQI systems to monitor fill rates, schema validation, and missing data across financial tables. Worked on POS and DPD computation logic using repayment schedules and payment transaction data. Implemented migration validation and S3 extraction pipelines for partner onboarding and LOS integration.",
+    },
+    {
+      role: "💻 Full-Stack Developer Intern",
+      organization: "Nexus Overall Co. Ltd",
+      duration: "Feb 2025 – March 2025",
+      details:
+        "Developed a responsive web dashboard using Next.js and TailwindCSS, improving usability across 5+ devices. Built 10+ reusable UI components with Radix UI, increasing design consistency and cutting development time by 15%. Integrated NextAuth.js authentication with 3 user roles, enhancing security and streamlining user access control. Connected frontend with MongoDB-backed APIs handling 10K+ records, enabling real-time data updates.",
     },
     {
       role: "🎓 Campus Ambassador",
       organization: "Unstop",
-      duration: "Oct 2024 - Present",
+      duration: "Oct 2024 – Present",
       details:
         "Working as a campus ambassador at Unstop has been an incredible journey of learning and collaboration. Being part of a team dedicated to creating opportunities for students in our respective colleges has taught me the value of outreach and community-building. Our responsibilities range from organizing events and workshops to providing a supportive platform for students to grow and connect. The teamwork involved in planning and executing these initiatives has been an enriching experience, enhancing my organizational, communication, and leadership skills. At Unstop, I've realized the power of creating a community that empowers students to explore, learn, and excel. This role has not only allowed me to contribute to my college but also to develop a sense of purpose and fulfillment in helping others succeed.",
+    },
+    {
+      role: "🧑‍💻 Technical Member",
+      organization: "Algorithmic and Programming Society, NIT Rourkela",
+      duration: "Nov 2022 – Present",
+      details:
+        "As a dedicated member of the Algorithmic and Programming Society at NIT Rourkela, I have embraced the opportunity to contribute to the professional and technical development of students. My role involves mentoring and coaching a group of aspiring programmers, guiding their progress, and ensuring they remain focused on their goals. Additionally, I am an integral part of the core event management team, where I collaborate to organize events and workshops that enhance learning, foster collaboration, and inspire innovation among students. This experience has been deeply fulfilling, allowing me to blend my technical expertise with leadership skills while making a meaningful impact on the academic and professional journeys of my peers.",
     },
   ];
 

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import "./LoadingScreenCSS.css";
-import Logo from "../../images/logo.png";
+const Logo = (process.env.PUBLIC_URL || "") + "/images/logo.png";
 
 const LoadingScreen = () => {
     return (

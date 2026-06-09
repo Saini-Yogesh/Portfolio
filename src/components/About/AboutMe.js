@@ -1,7 +1,8 @@
 import React from "react";
 import "./AboutMeCSS.css";
-import profileImage from "../../images/myPhoto2.jpg";
 import { motion } from "framer-motion";
+
+const profileImage = (process.env.PUBLIC_URL || "") + "/images/myPhoto2.jpg";
 
 const AboutMe = () => {
   return (

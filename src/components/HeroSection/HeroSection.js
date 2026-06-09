@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./HeroSectionCSS.css";
-// import heroImage from "../../images/myPhoto1.jpg";
+
 import { motion } from "framer-motion";
 import TechGlobe from "../TechGlobe/TechGlobe"
 

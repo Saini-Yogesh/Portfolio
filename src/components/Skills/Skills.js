@@ -3,56 +3,62 @@ import { motion } from "framer-motion";
 import "./SkillsCSS.css"; // Make sure CSS uses --skills-* variables
 
 const skills = {
-  "Programming Languages": [
-    { name: "C", icon: "C", color: "#00599C", textColor: "#fff" },
+  "Languages": [
     { name: "C++", icon: "C++", color: "#004482", textColor: "#fff" },
-    { name: "HTML", icon: "H", color: "#e34f26", textColor: "#fff" },
-    { name: "CSS", icon: "C", color: "#1572b6", textColor: "#fff" },
+    { name: "Python", icon: "Py", color: "#3776AB", textColor: "#fff" },
     { name: "JavaScript", icon: "JS", color: "#f7df1e", textColor: "#000" },
+    { name: "SQL", icon: "SQL", color: "#00758F", textColor: "#fff" },
+    { name: "HTML", icon: "HTML", color: "#e34f26", textColor: "#fff" },
+    { name: "CSS", icon: "CSS", color: "#1572b6", textColor: "#fff" },
   ],
-  "Relevant Courses": [
-    { name: "Data Structures", icon: "🧩", color: "#1abc9c", textColor: "#fff" },
-    { name: "Algorithms", icon: "🧠", color: "#16a085", textColor: "#fff" },
-    { name: "OOPS", icon: "📦", color: "#3498db", textColor: "#fff" },
-    { name: "DBMS", icon: "🗃️", color: "#9b59b6", textColor: "#fff" },
-    { name: "OS", icon: "💻", color: "#e67e22", textColor: "#fff" },
-  ],
-  "Frameworks": [
-    { name: "Node.js", icon: "Node", color: "#3c873a", textColor: "#fff" },
+  "Frontend": [
     { name: "React.js", icon: "⚛️", color: "#61dafb", textColor: "#000" },
-    { name: "Next.js", icon: "NX", color: "#000", textColor: "#fff" },
-    { name: "Mongoose", icon: "MG", color: "#800000", textColor: "#fff" },
-    { name: "Express", icon: "Ex", color: "#444", textColor: "#fff" },
-    { name: "Bootstrap", icon: "B", color: "#563d7c", textColor: "#fff" },
+    { name: "Next.js", icon: "Next", color: "#000", textColor: "#fff" },
     { name: "Tailwind CSS", icon: "TW", color: "#38b2ac", textColor: "#fff" },
-    { name: "npm Packages", icon: "npm", color: "#cb3837", textColor: "#fff" },
+    { name: "Bootstrap", icon: "B", color: "#563d7c", textColor: "#fff" },
+  ],
+  "Backend": [
+    { name: "Node.js", icon: "Node", color: "#3c873a", textColor: "#fff" },
+    { name: "Express.js", icon: "Ex", color: "#444", textColor: "#fff" },
+    { name: "Mongoose", icon: "MG", color: "#800000", textColor: "#fff" },
+  ],
+  "Data Engineering": [
+    { name: "PySpark", icon: "Spark", color: "#E25A1B", textColor: "#fff" },
+    { name: "Databricks", icon: "DB", color: "#FF3621", textColor: "#fff" },
+    { name: "Apache Airflow", icon: "💨", color: "#017A8A", textColor: "#fff" },
+    { name: "ETL Pipelines", icon: "⚙️", color: "#2980b9", textColor: "#fff" },
+    { name: "Delta Lake", icon: "🌊", color: "#008080", textColor: "#fff" },
+    { name: "Data Quality Monitoring", icon: "📊", color: "#27ae60", textColor: "#fff" },
+  ],
+  "Cloud & Platforms": [
+    { name: "AWS S3", icon: "S3", color: "#FF9900", textColor: "#000" },
+    { name: "Amazon WorkSpaces", icon: "AWS", color: "#232F3E", textColor: "#fff" },
+    { name: "Vercel", icon: "▲", color: "#000000", textColor: "#fff" },
+    { name: "Netlify", icon: "◈", color: "#00C7B7", textColor: "#fff" },
+  ],
+  "Databases": [
+    { name: "MongoDB", icon: "🍃", color: "#13aa52", textColor: "#fff" },
+    { name: "MySQL", icon: "🐬", color: "#4479A1", textColor: "#fff" },
   ],
   "Developer Tools": [
-    { name: "MongoDB", icon: "🍃", color: "#13aa52", textColor: "#fff" },
-    { name: "Postman", icon: "📬", color: "#ff6c37", textColor: "#fff" },
-    { name: "Thunder Client", icon: "⚡", color: "#7f8c8d", textColor: "#fff" },
-    { name: "VS Code", icon: "VS", color: "#007acc", textColor: "#fff" },
     { name: "Git", icon: "Git", color: "#f34f29", textColor: "#fff" },
     { name: "GitHub", icon: "GH", color: "#171515", textColor: "#fff" },
-    { name: "Redux Toolkit", icon: "RTK", color: "#764abc", textColor: "#fff" },
-    { name: "OpenAI", icon: "🧠", color: "#10a37f", textColor: "#fff" },
-  ], "APIs & Integrations": [
-    { name: "REST APIs", icon: "API", color: "#27ae60", textColor: "#fff" },
-    { name: "OpenAI API", icon: "🔮", color: "#10A37F", textColor: "#fff" },
+    { name: "VS Code", icon: "VS", color: "#007acc", textColor: "#fff" },
+    { name: "Postman", icon: "📬", color: "#ff6c37", textColor: "#fff" },
+    { name: "Thunder Client", icon: "⚡", color: "#7f8c8d", textColor: "#fff" },
+  ],
+  "APIs & Technologies": [
+    { name: "Gemini API", icon: "♊", color: "#1a73e8", textColor: "#fff" },
     { name: "Twilio", icon: "📡", color: "#F22F46", textColor: "#fff" },
     { name: "WebSockets", icon: "🔌", color: "#2C3E50", textColor: "#fff" },
     { name: "Webhooks", icon: "🔄", color: "#8E44AD", textColor: "#fff" },
     { name: "ngrok", icon: "🌐", color: "#1F1F1F", textColor: "#fff" },
   ],
   "Soft Skills": [
-    { name: "Adaptability", icon: "🌱", color: "#16a085", textColor: "#fff" },
-    { name: "Problem-solving", icon: "🧩", color: "#2980b9", textColor: "#fff" },
-    { name: "Teamwork", icon: "🤝", color: "#27ae60", textColor: "#fff" },
+    { name: "Problem Solving", icon: "🧩", color: "#2980b9", textColor: "#fff" },
+    { name: "Team Collaboration", icon: "🤝", color: "#27ae60", textColor: "#fff" },
     { name: "Communication", icon: "💬", color: "#8e44ad", textColor: "#fff" },
     { name: "Leadership", icon: "🧭", color: "#c0392b", textColor: "#fff" },
-    { name: "Time Management", icon: "⏳", color: "#e67e22", textColor: "#fff" },
-    { name: "Enthusiasm", icon: "🔥", color: "#f39c12", textColor: "#000" },
-    { name: "Critical Thinking", icon: "🧠", color: "#2c3e50", textColor: "#fff" },
   ],
 };
 

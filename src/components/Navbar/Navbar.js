@@ -4,8 +4,9 @@ import { ThemeContext } from "../../ThemeContext";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import Logo from "../../images/logo.png";
 import { motion } from "framer-motion";
+
+const Logo = (process.env.PUBLIC_URL || "") + "/images/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

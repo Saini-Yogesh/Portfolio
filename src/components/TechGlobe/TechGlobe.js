@@ -3,32 +3,32 @@ import * as THREE from "three";
 import "./TechGlobeCSS.css";
 
 const iconTextures = [
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/railway/railway-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/d3js/d3js-original.svg",
+  "/images/techGlobeIcons/c-original.svg",
+  "/images/techGlobeIcons/cplusplus-original.svg",
+  "/images/techGlobeIcons/css3-original.svg",
+  "/images/techGlobeIcons/express-original-wordmark.svg",
+  "/images/techGlobeIcons/git-original.svg",
+  "/images/techGlobeIcons/github-original-wordmark.svg",
+  "/images/techGlobeIcons/html5-original.svg",
+  "/images/techGlobeIcons/javascript-original.svg",
+  "/images/techGlobeIcons/json-original.svg",
+  "/images/techGlobeIcons/mongoose-original-wordmark.svg",
+  "/images/techGlobeIcons/mongodb-original.svg",
+  "/images/techGlobeIcons/nextjs-original.svg",
+  "/images/techGlobeIcons/nodejs-original.svg",
+  "/images/techGlobeIcons/nodemon-original.svg",
+  "/images/techGlobeIcons/npm-original-wordmark.svg",
+  "/images/techGlobeIcons/fastapi-original.svg",
+  "/images/techGlobeIcons/postman-original.svg",
+  "/images/techGlobeIcons/react-original.svg",
+  "/images/techGlobeIcons/redux-original.svg",
+  "/images/techGlobeIcons/tailwindcss-original.svg",
+  "/images/techGlobeIcons/vscode-original.svg",
+  "/images/techGlobeIcons/bootstrap-original.svg",
+  "/images/techGlobeIcons/typescript-original.svg",
+  "/images/techGlobeIcons/vercel-original-wordmark.svg",
+  // "/images/techGlobeIcons/railway-original-wordmark.svg",
+  "/images/techGlobeIcons/d3js-original.svg",
 ];
 
 const SkillTagCloud = () => {
@@ -52,7 +52,7 @@ const SkillTagCloud = () => {
     function fibonacciSpherePoints(samples, radius) {
       const points = [];
       const offset = 2 / samples;
-      const increment = Math.PI * (3 - Math.sqrt(5));  // golden angle in radians
+      const increment = Math.PI * (3 - Math.sqrt(5)); // golden angle in radians
 
       for (let i = 0; i < samples; i++) {
         const y = i * offset - 1 + offset / 2;
@@ -103,13 +103,14 @@ const SkillTagCloud = () => {
       }
     };
 
-
     iconTextures.forEach((url, i) => {
       loader.load(url, (texture) => {
         texture.magFilter = THREE.NearestFilter;
         texture.minFilter = THREE.NearestFilter;
 
-        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture }));
+        const sprite = new THREE.Sprite(
+          new THREE.SpriteMaterial({ map: texture }),
+        );
         const aspect = texture.image.width / texture.image.height;
         sprite.scale.set(size * aspect, size, 1);
         sprite.position.copy(points[i]);
@@ -133,11 +134,10 @@ const SkillTagCloud = () => {
       color: 0x00ff,
       transparent: true,
       opacity: 0.05,
-      side: THREE.BackSide
+      side: THREE.BackSide,
     });
     const glowSphere = new THREE.Mesh(glowGeometry, glowMaterial);
     scene.add(glowSphere);
-
 
     let isDragging = false;
     let prevMouse = { x: 0, y: 0 };
@@ -196,7 +196,6 @@ const SkillTagCloud = () => {
       <div className="iconssphear-tag-cloud" ref={containerRef}></div>
     </div>
   );
-
 };
 
 export default SkillTagCloud;
