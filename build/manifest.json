@@ -1,6 +1,7 @@
 {
-  "short_name": "My Portfolio",
-  "name": "Portfolio of Yogesh Saini - Web Developer & Programmer",
+  "short_name": "Yogesh Saini",
+  "name": "Yogesh Saini — NIT Rourkela Software Developer, Data Engineer & Freelancer",
+  "description": "Portfolio of Yogesh Saini — NIT Rourkela Mechanical Engineering, Software Developer, Full Stack Web Developer, Data Engineer, Freelance MERN stack developer. Hire for web projects.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,5 +12,7 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#4e90ff",
-  "background_color": "#0a0a0a"
+  "background_color": "#0a0a0a",
+  "lang": "en-IN",
+  "categories": ["portfolio", "developer", "resume", "freelance", "data-engineering", "software-development"]
 }

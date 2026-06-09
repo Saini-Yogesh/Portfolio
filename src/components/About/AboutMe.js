@@ -43,7 +43,7 @@ const AboutMe = () => {
           >
             <motion.img
               src={profileImage}
-              alt="Profile"
+              alt="Yogesh Saini — Full Stack Web Developer, NIT Rourkela"
               draggable="false"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 150 }}
