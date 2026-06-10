@@ -77,9 +77,14 @@
   top: 2.25rem;
   left: var(--timeline-track);
   width: var(--timeline-gap);
-  height: 1px;
-  background-color: var(--card-border);
-  z-index: 1;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--accent)
+  );
+  opacity: 0.7;
+  z-index: 2;
 }
 
 .timeline-card {
