@@ -1,21 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./ScrollToTopButtonCSS.css";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const toggleVisibility = useCallback(() => {
+    setIsVisible(window.scrollY > 200);
+  }, []);
+
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 200) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+    let ticking = false;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        toggleVisibility();
+        ticking = false;
+      });
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    toggleVisibility();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [toggleVisibility]);
 
   const scrollToTop = () => {
     window.scrollTo({

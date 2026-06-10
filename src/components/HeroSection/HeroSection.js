@@ -1,65 +1,92 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
 import "./HeroSectionCSS.css";
-
 import { motion } from "framer-motion";
-import TechGlobe from "../TechGlobe/TechGlobe";
 
-// Typing effect component
+const TechGlobe = lazy(() => import("../TechGlobe/TechGlobe"));
+
 const TypingEffect = ({ text, speed, loop }) => {
   const [displayedText, setDisplayedText] = useState("");
-  const [index, setIndex] = useState(0);
+  const indexRef = useRef(0);
 
   useEffect(() => {
-    // eslint-disable-next-line
-    let timeout;
-    const typeText = () => {
-      if (index < text.length) {
-        setDisplayedText((prev) => prev + text[index]);
-        setIndex((prevIndex) => prevIndex + 1);
-      } else {
-        if (loop) {
-          timeout = setTimeout(() => {
-            setDisplayedText("");
-            setIndex(0);
-          }, 2000);
-        }
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setDisplayedText(text);
+      return;
+    }
+
+    indexRef.current = 0;
+    setDisplayedText("");
+
+    let timeoutId;
+    const intervalId = setInterval(() => {
+      const nextIndex = indexRef.current + 1;
+
+      if (nextIndex <= text.length) {
+        indexRef.current = nextIndex;
+        setDisplayedText(text.slice(0, nextIndex));
+        return;
       }
+
+      if (loop) {
+        timeoutId = setTimeout(() => {
+          indexRef.current = 0;
+          setDisplayedText("");
+        }, 2000);
+      } else {
+        clearInterval(intervalId);
+      }
+    }, speed);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
     };
-
-    const interval = setInterval(typeText, speed);
-
-    return () => clearInterval(interval);
-  }, [index, text, speed, loop]);
+  }, [text, speed, loop]);
 
   return <motion.span>{displayedText}</motion.span>;
 };
 
 const HeroSection = () => {
+  const heroRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
+  const [showGlobe, setShowGlobe] = useState(false);
 
   useEffect(() => {
+    const node = heroRef.current;
+    if (!node) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-          } else {
-            setIsInView(false);
-          }
-        });
-      },
+      ([entry]) => setIsInView(entry.isIntersecting),
       { threshold: 0.3 },
     );
 
-    const heroSection = document.querySelector(".hero-section");
-    observer.observe(heroSection);
-
+    observer.observe(node);
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!isInView) return;
+
+    const idleCallback =
+      window.requestIdleCallback ||
+      ((cb) => setTimeout(cb, 120));
+
+    const cancelIdle =
+      window.cancelIdleCallback ||
+      ((id) => clearTimeout(id));
+
+    const idleId = idleCallback(() => setShowGlobe(true), { timeout: 600 });
+
+    return () => cancelIdle(idleId);
+  }, [isInView]);
+
   return (
     <div>
-      <div className="hero-section">
+      <div className="hero-section" ref={heroRef}>
         <div className="hero-container">
           <div className="hero-content">
             <div className="availability-badge shine-button">
@@ -112,16 +139,12 @@ const HeroSection = () => {
               </a>
             </motion.div>
           </div>
-          <TechGlobe />
+          {showGlobe && (
+            <Suspense fallback={<div className="tech-globe-placeholder" aria-hidden="true" />}>
+              <TechGlobe />
+            </Suspense>
+          )}
         </div>
-        {/* <motion.div
-          className="hero-image"
-          initial={{ opacity: 0, scale: 0.4 }}
-          animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <img draggable="false" src={heroImage} alt="Hero" />
-        </motion.div> */}
       </div>
     </div>
   );

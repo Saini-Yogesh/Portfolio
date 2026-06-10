@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./FormCSS.css";
-import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 const Form = () => {
@@ -29,8 +28,8 @@ const Form = () => {
     setStatus(null);
 
     try {
-      // eslint-disable-next-line
-      const result = await emailjs.send(
+      const { default: emailjs } = await import("emailjs-com");
+      await emailjs.send(
         "service_lwd4z2k",
         "template_9s610sh",
         formData,

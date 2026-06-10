@@ -75,6 +75,10 @@ const CodingProfilesSection = () => {
               src={profile.icon}
               alt={profile.name}
               className="coding-profile-icon"
+              loading="lazy"
+              decoding="async"
+              width={64}
+              height={64}
             />
           </motion.a>
         ))}

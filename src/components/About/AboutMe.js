@@ -45,6 +45,10 @@ const AboutMe = () => {
               src={profileImage}
               alt="Yogesh Saini — Full Stack Web Developer, NIT Rourkela"
               draggable="false"
+              loading="lazy"
+              decoding="async"
+              width={400}
+              height={400}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 150 }}
             />

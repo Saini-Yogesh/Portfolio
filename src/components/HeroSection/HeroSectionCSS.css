@@ -218,6 +218,12 @@ body.dark .ping-dot::before {
   }
 }
 
+.tech-globe-placeholder {
+  width: 375px;
+  height: 375px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 480px) {
   .hero-content h1:first-of-type,
   .hero-content h1 {

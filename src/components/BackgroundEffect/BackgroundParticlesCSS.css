@@ -27,13 +27,14 @@ body.dark {
   z-index: -1000;
   pointer-events: none;
   overflow: hidden;
+  contain: strict;
 }
 
 /* ===== Ambient gradient orbs ===== */
 .bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(72px);
   will-change: transform;
 }
 
@@ -136,4 +137,11 @@ body.dark {
     transparent 35%,
     var(--vignette-color) 100%
   );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-orb {
+    animation: none !important;
+    will-change: auto;
+  }
 }

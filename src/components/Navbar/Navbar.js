@@ -60,7 +60,15 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <a className="logo" href="/Portfolio">
-          <img src={Logo} alt="Yogesh Saini Portfolio" className="logo-img" />
+          <img
+            src={Logo}
+            alt="Yogesh Saini Portfolio"
+            className="logo-img"
+            width={48}
+            height={48}
+            decoding="async"
+            fetchPriority="high"
+          />
         </a>
         <div className="navbar-right">
           <div

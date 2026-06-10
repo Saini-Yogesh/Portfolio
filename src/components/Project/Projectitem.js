@@ -68,7 +68,12 @@ const Projectitem = (props) => {
         </div>
         <div className="project-image">
           <div className="image-wrapper">
-            <img src={image} alt={`${name} Screenshot`} />
+            <img
+              src={image}
+              alt={`${name} Screenshot`}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>

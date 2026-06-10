@@ -82,13 +82,13 @@ const LoadingScreen = () => {
           className="loading-progress-track"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.3 }}
+          transition={{ delay: 0.4, duration: 0.25 }}
         >
           <motion.div
             className="loading-progress-bar"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ delay: 0.9, duration: 0.8, ease: "easeInOut" }}
+            transition={{ delay: 0.5, duration: 0.9, ease: "easeInOut" }}
           />
         </motion.div>
       </div>
