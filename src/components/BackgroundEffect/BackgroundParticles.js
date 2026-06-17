@@ -12,6 +12,9 @@ const BackgroundParticles = () => {
       {/* Dot grid overlay */}
       <div className="bg-grid" />
 
+      {/* Animated scan-line sweep */}
+      {/* <div className="bg-scanline" /> */}
+
       {/* Soft vignette edges */}
       <div className="bg-vignette" />
     </div>

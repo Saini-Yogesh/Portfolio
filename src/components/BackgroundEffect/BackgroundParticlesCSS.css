@@ -6,7 +6,10 @@
   --orb-2: rgba(124, 58, 237, 0.15); /* Violet */
   --orb-3: rgba(13, 148, 136, 0.14); /* Teal */
   --orb-4: rgba(99, 102, 241, 0.1); /* Soft indigo accent */
-  --grid-dot: rgba(10, 9, 25, 0.18);
+  --grid-line: rgba(79, 70, 229, 0.12);
+  --grid-line-secondary: rgba(79, 70, 229, 0.05);
+  --grid-dot-glow: rgba(79, 70, 229, 0.2);
+  --scan-line: rgba(79, 70, 229, 0.06);
   --vignette-color: var(--bg-primary);
 }
 
@@ -16,7 +19,10 @@ body.dark {
   --orb-2: rgba(139, 92, 246, 0.22);
   --orb-3: rgba(34, 211, 238, 0.16);
   --orb-4: rgba(167, 139, 250, 0.12);
-  --grid-dot: rgba(139, 92, 246, 0.18);
+  --grid-line: rgba(139, 92, 246, 0.18);
+  --grid-line-secondary: rgba(139, 92, 246, 0.07);
+  --grid-dot-glow: rgba(139, 92, 246, 0.35);
+  --scan-line: rgba(139, 92, 246, 0.08);
   --vignette-color: var(--bg-primary);
 }
 
@@ -115,32 +121,82 @@ body.dark {
   }
 }
 
-/* ===== Dot grid overlay ===== */
+/* ===== Technical line-grid overlay ===== */
 .bg-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(
-    circle,
-    var(--grid-dot) 1.2px,
-    transparent 1.2px
-  );
-  background-size: 32px 32px;
+  background-image:
+    /* Glowing dots at major intersections */
+    radial-gradient(
+      circle 1.5px at center,
+      var(--grid-dot-glow) 0%,
+      transparent 100%
+    ),
+    /* Primary grid — horizontal */
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
+    /* Primary grid — vertical */
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    /* Secondary fine grid — horizontal */
+    linear-gradient(to bottom, var(--grid-line-secondary) 1px, transparent 1px),
+    /* Secondary fine grid — vertical */
+    linear-gradient(to right, var(--grid-line-secondary) 1px, transparent 1px);
+  background-size:
+    80px 80px,
+    80px 80px,
+    80px 80px,
+    20px 20px,
+    20px 20px;
   opacity: 1;
+}
+
+/* ===== Animated scan-line sweep ===== */
+.bg-scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--scan-line) 50%,
+    transparent 100%
+  );
+  background-size: 100% 30%;
+  background-repeat: no-repeat;
+  animation: scanline-sweep 8s ease-in-out infinite;
+  will-change: background-position;
+}
+
+@keyframes scanline-sweep {
+  0% {
+    background-position: 0% -30%;
+  }
+  50% {
+    background-position: 0% 130%;
+  }
+  100% {
+    background-position: 0% -30%;
+  }
 }
 
 /* ===== Edge vignette — fades grid/orbs at borders ===== */
 .bg-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse 80% 80% at 50% 50%,
-    transparent 35%,
-    var(--vignette-color) 100%
-  );
+  background:
+    /* Inner soft fade */
+    radial-gradient(
+      ellipse 70% 70% at 50% 50%,
+      transparent 40%,
+      var(--vignette-color) 100%
+    ),
+    /* Top edge fade */
+    linear-gradient(to bottom, var(--vignette-color) 0%, transparent 8%),
+    /* Bottom edge fade */
+    linear-gradient(to top, var(--vignette-color) 0%, transparent 8%);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bg-orb {
+  .bg-orb,
+  .bg-scanline {
     animation: none !important;
     will-change: auto;
   }

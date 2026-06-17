@@ -27,7 +27,9 @@ const iconTextures = [
   "/images/techGlobeIcons/bootstrap-original.svg",
   "/images/techGlobeIcons/typescript-original.svg",
   "/images/techGlobeIcons/vercel-original-wordmark.svg",
-  "/images/techGlobeIcons/d3js-original.svg",
+  "/images/techGlobeIcons/apache-airflow.svg",
+  "/images/techGlobeIcons/python.svg",
+  "/images/techGlobeIcons/mysql.svg",
 ];
 
 const disposeObject = (object) => {
@@ -69,7 +71,9 @@ const SkillTagCloud = () => {
       powerPreference: "high-performance",
     });
     renderer.setSize(375, 375);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 1.75));
+    renderer.setPixelRatio(
+      Math.min(window.devicePixelRatio, isMobile ? 1.25 : 1.75),
+    );
     canvas.appendChild(renderer.domElement);
 
     const domElement = renderer.domElement;
@@ -94,7 +98,11 @@ const SkillTagCloud = () => {
         const x = Math.cos(phi) * r;
         const z = Math.sin(phi) * r;
         points.push(
-          new THREE.Vector3(x * sphereRadius, y * sphereRadius, z * sphereRadius),
+          new THREE.Vector3(
+            x * sphereRadius,
+            y * sphereRadius,
+            z * sphereRadius,
+          ),
         );
       }
       return points;
