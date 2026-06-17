@@ -114,7 +114,7 @@ const HeroSection = () => {
               animate={{ opacity: isInView ? 1 : 0 }}
               transition={{ duration: 1.5 }}
             >
-              Discover the bespoke solutions and projects delivered.
+              Full-Stack Developer · Data Engineer · 2000+ DSA Problems Solved
             </motion.p>
 
             <motion.div

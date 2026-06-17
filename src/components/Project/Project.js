@@ -47,7 +47,7 @@ const Project = () => {
     },
     {
       sourceCodeLink: "https://github.com/Saini-Yogesh/E-Commerce-Store",
-      deployedLink: "https://github.com/Saini-Yogesh/E-Commerce-Store",
+      deployedLink: null,
       name: "E-Commerce-Store",
       description:
         "E-Commerce Website is a modern shopping platform built with React, Node.js, Express.js, and MongoDB. It features user authentication, product browsing, shopping cart, secure payments (PayPal/Stripe), and an admin dashboard for managing inventory and orders. With a responsive design and seamless experience, it ensures smooth transactions.",

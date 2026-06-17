@@ -1,4 +1,10 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+  useCallback,
+} from "react";
 import "./NavbarCSS.css";
 import { ThemeContext } from "../../ThemeContext";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -18,33 +24,6 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleLinkClick = (href) => {
-    setMenuOpen(false);
-    setCurrentSection(href.replace("#", ""));
-  };
-
-  useEffect(() => {
-    const updateCurrentSection = () => {
-      const hash = window.location.hash.replace("#", "");
-      setCurrentSection(hash);
-    };
-
-    updateCurrentSection(); // Initialize on mount
-
-    window.addEventListener("hashchange", updateCurrentSection);
-    return () => window.removeEventListener("hashchange", updateCurrentSection);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   const links = [
     { label: "About Me", href: "#AboutMe" },
     { label: "Education", href: "#Education" },
@@ -55,6 +34,51 @@ const Navbar = () => {
     { label: "Coding Profiles", href: "#Coding-profiles" },
     { label: "Contact", href: "#Contact" },
   ];
+
+  const handleLinkClick = (href) => {
+    setMenuOpen(false);
+    setCurrentSection(href.replace("#", ""));
+  };
+
+  // Scroll-based active section tracking via IntersectionObserver
+  const observerRef = useRef(null);
+
+  const sectionIds = links.map((l) => l.href.replace("#", ""));
+
+  const handleIntersect = useCallback((entries) => {
+    // Find the entry with the largest intersection ratio
+    const visible = entries
+      .filter((e) => e.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+    if (visible.length > 0) {
+      setCurrentSection(visible[0].target.id);
+    }
+  }, []);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(handleIntersect, {
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: [0, 0.25, 0.5],
+    });
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observerRef.current.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
+  }, [sectionIds, handleIntersect]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -115,11 +139,13 @@ const Navbar = () => {
               <AiOutlineClose
                 className="navbar-menu-icon"
                 onClick={handleMenuToggle}
+                aria-label="Close menu"
               />
             ) : (
               <GiHamburgerMenu
                 className="navbar-menu-icon"
                 onClick={handleMenuToggle}
+                aria-label="Open menu"
               />
             )}
           </div>

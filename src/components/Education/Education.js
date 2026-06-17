@@ -18,7 +18,7 @@ const educationData = [
   {
     institute: "Modern Children Sr Sec School",
     location: "Neem Ka Thana, Sikar, India",
-    degree: "12th in Science and Maths",
+    degree: "12th Grade (PCM)",
     year: "Intermediate – 95.20%, May 2021",
   },
   {
@@ -62,7 +62,7 @@ const Education = () => {
             initial="hidden"
             whileInView="visible"
             whileHover="hover"
-            viewport={{ amount: 0.2 }}
+            viewport={{ amount: 0.2, once: true }}
           >
             <div className="education-row">
               <span className="institute">{item.institute}</span>

@@ -23,7 +23,7 @@
 .loading-orb-1 {
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, #4f46e5, #7c3aed);
+  background: radial-gradient(circle, var(--primary), #7c3aed);
   top: -100px;
   left: -100px;
   animation: orb-float 6s ease-in-out infinite alternate;
@@ -33,7 +33,7 @@
 .loading-orb-2 {
   width: 280px;
   height: 280px;
-  background: radial-gradient(circle, #0d9488, #22d3ee);
+  background: radial-gradient(circle, var(--accent), #22d3ee);
   bottom: -80px;
   right: -80px;
   animation: orb-float 8s ease-in-out infinite alternate-reverse;
@@ -89,7 +89,7 @@
   font-family: "Space Grotesk", sans-serif;
   font-size: 2.25rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0d9488 100%);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -128,9 +128,8 @@
 
 .loading-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #4f46e5, #7c3aed, #0d9488);
-  border-radius: 999px;
-  box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+  background: var(--gradient-primary);
+  box-shadow: 0 0 8px var(--primary-glow);
   will-change: width;
 }
 

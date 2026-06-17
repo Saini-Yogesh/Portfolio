@@ -118,7 +118,7 @@ export default function SkillGrid() {
                   initial="hidden"
                   whileInView="visible"
                   whileHover="hover"
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2, once: true }}
                   className="skill-item group"
                 >
                   <div className="skill-card">

@@ -19,14 +19,14 @@ const AboutMe = () => {
               <i className="fa-regular fa-user"></i> About Me
             </h1>
             <p>
-              Hi, I'm <b style={{ color: '#4a90e2', fontSize: "1.2em" }}>Yogesh Saini</b>.
-              I'm a web developer with a passion for
-              creating dynamic and responsive web applications. With a strong
-              background in the MERN stack and a keen eye for design, I enjoy
-              bringing ideas to life in the browser. My journey in web development
-              started with a curiosity for how websites are built, and it has
-              evolved into a fulfilling career where I get to solve interesting
-              problems every day.
+              Hi, I'm <b style={{ color: 'var(--primary)', fontSize: "1.2em" }}>Yogesh Saini</b> —
+              a <b>Mechanical Engineering</b> graduate from{" "}
+              <b>NIT Rourkela</b> who discovered a deep passion for building
+              software. Currently a <b>Data Engineering Intern at Vivriti Capital</b> and
+              a <b>Freelance Full-Stack Developer</b>, I specialize in the MERN
+              stack, PySpark, and crafting clean, responsive web applications.
+              With <b>2,000+ DSA problems</b> solved across competitive programming
+              platforms, I bring strong problem-solving skills to every project I build.
             </p>
           </motion.div>
           <motion.div

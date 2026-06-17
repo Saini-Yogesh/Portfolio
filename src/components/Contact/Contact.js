@@ -8,7 +8,7 @@ const Contact = () => {
         <div className="footer-content">
           <div className="footer-brand">
             <div className="brand-logo">YOGESH SAINI</div>
-            <div className="brand-subtitle">Full-Stack Developer</div>
+            <div className="brand-subtitle">Full-Stack Developer & Data Engineer</div>
           </div>
 
           <div className="footer-icons">

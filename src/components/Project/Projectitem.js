@@ -54,16 +54,18 @@ const Projectitem = (props) => {
             >
               GitHub ↗
             </motion.a>
-            <motion.a
-              href={deployedLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn shine-button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Live Demo ↗
-            </motion.a>
+            {deployedLink && (
+              <motion.a
+                href={deployedLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn shine-button"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Live Demo ↗
+              </motion.a>
+            )}
           </div>
         </div>
         <div className="project-image">
@@ -73,6 +75,8 @@ const Projectitem = (props) => {
               alt={`${name} Screenshot`}
               loading="lazy"
               decoding="async"
+              width={600}
+              height={380}
             />
           </div>
         </div>

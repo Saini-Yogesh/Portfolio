@@ -81,7 +81,7 @@ const Achievements = () => {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
+            viewport={{ amount: 0.2, once: true }}
           >
             <i className="fa-solid fa-award achievement-icon"></i>
             <p className="achievement-text">

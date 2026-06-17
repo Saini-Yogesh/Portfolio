@@ -2,32 +2,34 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./CodingProfileCSS.css";
 
+const BASE = (process.env.PUBLIC_URL || "") + "/images/codingProfileIcons/";
+
 const CodingProfilesSection = () => {
   const codingProfiles = [
     {
       name: "LeetCode",
       link: "https://leetcode.com/u/yogesh_1___/",
-      icon: "https://user-images.githubusercontent.com/36547915/97088991-45da5d00-1652-11eb-900f-80d106540f4f.png",
+      icon: BASE + "leetcode.png",
     },
     {
       name: "CodeChef",
       link: "https://www.codechef.com/users/yogesh_1_saini",
-      icon: "https://pbs.twimg.com/profile_images/1477930785537605633/ROTVNVz7_400x400.jpg",
+      icon: BASE + "codechef.jpg",
     },
     {
       name: "Codeforces",
       link: "https://codeforces.com/profile/yogesh_1___",
-      icon: "https://play-lh.googleusercontent.com/_5YUQ0J5whp3KQ_ofkcjeB3nm-Si5GHEm1Xq37w3h7-BKA5iSzG2tLLgS7SKfOsf9EC2noGXgho9JLMMY__f=w240-h480-rw",
+      icon: BASE + "codeforces.png",
     },
     {
       name: "GeeksforGeeks",
       link: "https://www.geeksforgeeks.org/user/yogesh_1___/?ref=header_profile",
-      icon: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",
+      icon: BASE + "gfg.png",
     },
     {
       name: "AtCoder",
       link: "https://atcoder.jp/users/yogesh_1___",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZOKfQMWgupGFJsJbrlHLt3oea4hmgg6Qq-g&s",
+      icon: BASE + "atcoder.png",
     },
   ];
 

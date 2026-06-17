@@ -56,6 +56,7 @@
 .coding-profile-link:hover .coding-profile-icon {
   border-color: var(--primary);
   box-shadow: 0 12px 24px var(--primary-glow);
+  border-radius: 0px;
 }
 
 @media (max-width: 992px) {
